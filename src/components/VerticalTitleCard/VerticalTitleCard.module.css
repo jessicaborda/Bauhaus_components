@@ -1,0 +1,121 @@
+/**
+ * VerticalTitleCard Component Styles
+ * BEM Methodology: bh-block__element--modifier
+ */
+
+/* ===== CARD CONTAINER ===== */
+.bh-vertical-title-card {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	background-color: var(--bauhaus-white);
+	border: var(--bh-border-card);
+	box-sizing: border-box;
+}
+
+/* ===== TITLE SECTION ===== */
+.bh-vertical-title-card__title {
+	display: flex;
+	flex-direction: column;
+	width: 3rem;
+	flex-shrink: 0;
+	margin-right: var(--bh-space-md);
+}
+
+.bh-vertical-title-card__title-text {
+	flex: 4;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	padding-bottom: var(--bh-border-accent);
+}
+
+.bh-vertical-title-card__title-text-content {
+	writing-mode: vertical-rl;
+	transform: rotate(180deg);
+	font-size: 1.2rem;
+	font-weight: bold;
+	letter-spacing: 0.05em;
+	color: var(--bauhaus-black);
+}
+
+.bh-vertical-title-card__title-accent {
+	flex: none;
+	height: var(--bh-border-accent);
+	background-color: var(--bauhaus-blue);
+}
+
+.bh-vertical-title-card__title-icon {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.bh-vertical-title-card__title-icon img,
+.bh-vertical-title-card__title-icon svg {
+	width: 24px;
+	height: 24px;
+	object-fit: contain;
+}
+
+/* ===== RED DIVIDER ===== */
+.bh-vertical-title-card__divider {
+	width: var(--bh-border-accent);
+	flex-shrink: 0;
+	position: relative;
+}
+
+.bh-vertical-title-card__divider::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 90%;
+	background-color: var(--bauhaus-red);
+}
+
+/* ===== CONTENT SECTION ===== */
+.bh-vertical-title-card__content {
+	flex: 1;
+	min-width: 0;
+	margin: 0 var(--bh-space-md);
+	display: flex;
+	flex-direction: column;
+	gap: var(--bh-space-xs);
+}
+
+.bh-vertical-title-card__content-body {
+	flex: 4;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+.bh-vertical-title-card__content-action {
+	flex: none;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin: var(--bh-space-md) 0;
+}
+
+/* ===== TAIL SECTION ===== */
+.bh-vertical-title-card__tail {
+	width: var(--bh-border-accent);
+	flex-shrink: 0;
+	margin-right: var(--bh-space-lg);
+	position: relative;
+}
+
+.bh-vertical-title-card__tail::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 70%;
+	background-color: var(--bauhaus-yellow);
+}

@@ -1,0 +1,130 @@
+/**
+ * CardHeader Component Styles
+ */
+
+.container {
+  /* Bauhaus thick border */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* Default to full width of parent */
+  max-width: 100%;
+  /* Respect parent container width */
+  background-color: var(--bauhaus-white);
+  border: 8px solid var(--bauhaus-black);
+  position: relative;
+  box-sizing: border-box;
+  /* Include border in width calculation */
+}
+
+/* ===== HEADER SECTION ===== */
+
+.header {
+  padding: 0 16px;
+  display: block;
+  position: relative;
+}
+
+.blueAccent {
+  width: 5px;
+  height: 20px;
+  background-color: var(--bauhaus-blue);
+}
+
+.imageWrapper {
+  width: calc(100% + 32px);
+  margin-left: -16px;
+  margin-right: -16px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.headerImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.iconWrapper {
+  position: absolute;
+  top: 4px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerIcon {
+  width: 48px;
+  height: 48px;
+  display: block;
+  object-fit: contain;
+}
+
+.title {
+  margin-bottom: 8px;
+  margin-top: 4px;
+}
+
+/* ===== DIVIDER ===== */
+
+.redDivider {
+  width: 80%;
+  height: 3px;
+  background-color: var(--bauhaus-red);
+}
+
+/* ===== CONTENT SECTION ===== */
+
+.content {
+  display: flex;
+}
+
+.body {
+  padding: 16px;
+  padding-right: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.buttonWrapper {
+  align-self: flex-start;
+}
+
+.yellowAccent {
+  position: absolute;
+  bottom: 0;
+  right: 16px;
+  width: 5px;
+  height: 80px;
+  background-color: var(--bauhaus-yellow);
+}
+
+/* ===== LATERAL LAYOUT ===== */
+
+.lateralLayout {
+  display: flex;
+  flex-direction: row;
+}
+
+.lateralImageWrapper {
+  flex-shrink: 0;
+  width: 200px;
+  overflow: hidden;
+}
+
+.lateralImage {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.lateralContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}

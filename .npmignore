@@ -1,0 +1,45 @@
+# Source files (only publish dist/)
+src/
+.storybook/
+
+# Development files
+*.stories.jsx
+*.stories.js
+*.test.jsx
+*.test.js
+*.spec.jsx
+*.spec.js
+
+# Build tools
+vite.config.js
+node_modules/
+.vscode/
+.idea/
+
+# Documentation (except README)
+CONTRIBUTING.md
+
+# Git
+.git/
+.gitignore
+
+# Environment
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Testing
+coverage/
+
+# Storybook output
+storybook-static/
+
+# Build artifacts
+dist-ssr/
