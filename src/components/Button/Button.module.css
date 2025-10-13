@@ -1,0 +1,117 @@
+/**
+ * Estilos del componente Button
+ * 
+ * Utiliza CSS Modules para scoping automático
+ * y variables CSS para consistencia con el sistema de diseño
+ */
+
+.button {
+  /* Base */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  
+  border: var(--border-width-thick) solid transparent;
+  
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium);
+  
+  transition: all var(--transition-fast);
+  
+  /* Sin estilos por defecto del navegador */
+  background: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.button:hover:not(:disabled) {
+  /* set top/bottom and left/right border widths, style and color */
+  border-width: 1px 3px 3px 1px;
+  border-style: solid;
+  border-color: var(--bauhaus-black);
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  border: none;
+  cursor: not-allowed;
+}
+
+.button:disabled:active {
+  transform: none;
+}
+
+/* ===== VARIANTES ===== */
+
+.primary {
+  background-color: var(--bauhaus-blue);
+  color: var(--bauhaus-white);
+  border-color: var(--bauhaus-black);
+}
+
+.button.primary:hover:not(:disabled) {
+  background-color: var(--bauhaus-blue-700);
+}
+
+.button.primary:active:not(:disabled) {
+  background-color: var(--bauhaus-blue-900);
+  border: 3px solid var(--bauhaus-black);
+}
+
+.secondary {
+  background-color: var(--bauhaus-yellow);
+  color: var(--bauhaus-black);
+  border: 3px solid var(--bauhaus-black);
+}
+
+.secondary:hover:not(:disabled) {
+  background-color: var(--bauhaus-yellow-700);
+}
+
+.secondary:active:not(:disabled) {
+  background-color: var(--bauhaus-yellow-900);
+  border: 3px solid var(--bauhaus-black);
+}
+
+.outline {
+  background-color: transparent;
+  color: var(--bauhaus-blue);
+  border-color: var(--bauhaus-blue);
+}
+
+.outline:hover:not(:disabled) {
+  background-color: var(--bauhaus-blue);
+  color: var(--bauhaus-white);
+}
+
+/* ===== TAMAÑOS ===== */
+
+.small {
+  padding: var(--space-xs) var(--space-md);
+  font-size: var(--font-size-sm);
+  min-height: 32px;
+}
+
+.medium {
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--font-size-md);
+  min-height: 40px;
+}
+
+.large {
+  padding: var(--space-md) var(--space-xl);
+  font-size: var(--font-size-lg);
+  min-height: 48px;
+}
+
+/* ===== MODIFICADORES ===== */
+
+.fullWidth {
+  width: 100%;
+}
+

@@ -1,0 +1,60 @@
+/**
+ * Estilos del componente Badge
+ */
+
+.badge {
+  /* Base */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium);
+  
+  border-radius: var(--border-radius-full);
+  
+  /* Sin selección de texto */
+  user-select: none;
+}
+
+/* ===== VARIANTES DE COLOR ===== */
+
+.success {
+  background-color: var(--bauhaus-green);
+  color: var(--bauhaus-white);
+}
+
+.error {
+  background-color: var(--bauhaus-red);
+  color: var(--bauhaus-white);
+}
+
+.warning {
+  background-color: var(--bauhaus-yellow);
+  color: var(--bauhaus-black);
+}
+
+.info {
+  background-color: var(--bauhaus-blue);
+  color: var(--bauhaus-white);
+}
+
+.neutral {
+  background-color: var(--bauhaus-gray-200);
+  color: var(--bauhaus-gray-500);
+}
+
+/* ===== TAMAÑOS ===== */
+
+.small {
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--font-size-xs);
+  min-height: 20px;
+}
+
+.medium {
+  padding: var(--space-xs) var(--space-md);
+  font-size: var(--font-size-sm);
+  min-height: 24px;
+}
+

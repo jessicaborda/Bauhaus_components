@@ -1,0 +1,52 @@
+/**
+ * Estilos del componente Card
+ * 
+ * Una tarjeta simple y versátil con diferentes configuraciones
+ */
+
+.card {
+  /* Base */
+  display: block;
+  background-color: var(--bauhaus-white);
+  border-radius: var(--border-radius-lg);
+  transition: all var(--transition-normal);
+}
+
+/* ===== MODIFICADORES ===== */
+
+.bordered {
+  border: var(--border-width) solid var(--bauhaus-gray-200);
+}
+
+.shadow {
+  box-shadow: var(--shadow-md);
+}
+
+.hoverable {
+  cursor: pointer;
+}
+
+.hoverable:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.hoverable:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-md);
+}
+
+/* ===== PADDING ===== */
+
+.padding-small {
+  padding: var(--space-md);
+}
+
+.padding-medium {
+  padding: var(--space-lg);
+}
+
+.padding-large {
+  padding: var(--space-xl);
+}
+
