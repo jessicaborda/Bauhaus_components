@@ -6,7 +6,7 @@ import styles from './Button.module.css';
  * Un botón versátil con múltiples variantes y tamaños.
  * 
  * @param {Object} props - Propiedades del componente
- * @param {string} props.variant - Variante del botón: 'primary', 'secondary', 'outline'
+ * @param {string} props.variant - Variante del botón: 'default', 'warning', 'danger', 'success'
  * @param {string} props.size - Tamaño del botón: 'small', 'medium', 'large'
  * @param {boolean} props.disabled - Si el botón está deshabilitado
  * @param {boolean} props.fullWidth - Si el botón ocupa todo el ancho disponible
@@ -15,7 +15,7 @@ import styles from './Button.module.css';
  */
 export const Button = ({
   children,
-  variant = 'primary',
+  variant = 'default',
   size = 'medium',
   disabled = false,
   fullWidth = false,
