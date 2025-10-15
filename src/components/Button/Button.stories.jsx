@@ -1,12 +1,10 @@
 import { Button } from './Button';
 
 /**
- * Stories de Storybook para el componente Button
+ * Button Component Stories
  * 
- * Aquí defines todas las variantes y estados del componente
- * para visualizarlos en Storybook.
- * 
- * Documentación: https://storybook.js.org/docs/react/writing-stories/introduction
+ * Compact story structure that showcases all variants, sizes, and states
+ * in organized groups for easy visualization.
  */
 
 export default {
@@ -16,31 +14,31 @@ export default {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['primary', 'warning', 'danger', 'secondary', 'secondary_warning', 'secondary_danger', 'outline'],
-      description: 'Variante visual del botón',
+  options: ['default', 'warning', 'danger', 'success'],
+  description: 'Button visual variant',
     },
     size: {
       control: 'select',
       options: ['small', 'medium', 'large'],
-      description: 'Tamaño del botón',
+      description: 'Button size',
     },
     disabled: {
       control: 'boolean',
-      description: 'Estado deshabilitado',
+      description: 'Disabled state',
     },
     fullWidth: {
       control: 'boolean',
-      description: 'Ocupa todo el ancho disponible',
+      description: 'Full width button',
     },
     children: {
       control: 'text',
-      description: 'Contenido del botón',
+      description: 'Button content',
     },
   },
 };
 
-// Story por defecto
-export const Primary = {
+// Interactive playground
+export const Playground = {
   args: {
     variant: 'primary',
     children: 'Primary Button',
@@ -100,70 +98,87 @@ export const Small = {
 
 export const Medium = {
   args: {
-    variant: 'primary',
+    variant: 'default',
     size: 'medium',
-    children: 'Medium Button',
+    disabled: false,
+    fullWidth: false,
+    children: 'Button',
   },
 };
 
-export const Large = {
-  args: {
-    variant: 'primary',
-    size: 'large',
-    children: 'Large Button',
-  },
-};
-
-// Estados
-export const Disabled = {
-  args: {
-    variant: 'primary',
-    disabled: true,
-    children: 'Disabled Button',
-  },
-};
-
-export const FullWidth = {
-  args: {
-    variant: 'primary',
-    fullWidth: true,
-    children: 'Full Width Button',
-  },
-};
-
-// Todas las variantes juntas
+// All variants with their disabled states
 export const AllVariants = () => (
-  <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-    <Button variant="primary">Primary</Button>
-    <Button variant="warning">Warning</Button>
-    <Button variant="danger">Danger</Button>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+    <div>
+      <h4 style={{ marginBottom: '12px', fontWeight: 600 }}>Normal State</h4>
+      <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+        <Button variant="default">Default</Button>
+        <Button variant="warning">Warning</Button>
+        <Button variant="danger">Danger</Button>
+        <Button variant="success">Success</Button>
+      </div>
+    </div>
+    
+    <div>
+      <h4 style={{ marginBottom: '12px', fontWeight: 600 }}>Disabled State</h4>
+      <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+        <Button variant="default" disabled>Default</Button>
+        <Button variant="warning" disabled>Warning</Button>
+        <Button variant="danger" disabled>Danger</Button>
+        <Button variant="success" disabled>Success</Button>
+      </div>
+    </div>
   </div>
 );
 
-// Todas las variantes juntas
-export const AllSecondary = () => (
-  <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-    <Button variant="secondary">Secondary</Button>
-    <Button variant="secondary_warning">Warning</Button>
-    <Button variant="secondary_danger">Danger</Button>
-  </div>
-);
-
-// Todas las variantes juntas
-export const AllTertiary = () => (
-  <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-    <Button variant="tertiary">Tertiary</Button>
-    <Button variant="tertiary_warning">Warning</Button>
-    <Button variant="tertiary_danger">Danger</Button>
-  </div>
-);
-
-// Todos los tamaños juntos
+// All sizes for each variant
 export const AllSizes = () => (
-  <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-    <Button size="small">Small</Button>
-    <Button size="medium">Medium</Button>
-    <Button size="large">Large</Button>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+    <div>
+      <h4 style={{ marginBottom: '12px', fontWeight: 600 }}>Default</h4>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+        <Button variant="default" size="small">Small</Button>
+        <Button variant="default" size="medium">Medium</Button>
+        <Button variant="default" size="large">Large</Button>
+      </div>
+    </div>
+    
+    <div>
+      <h4 style={{ marginBottom: '12px', fontWeight: 600 }}>Warning</h4>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+        <Button variant="warning" size="small">Small</Button>
+        <Button variant="warning" size="medium">Medium</Button>
+        <Button variant="warning" size="large">Large</Button>
+      </div>
+    </div>
+    
+    <div>
+      <h4 style={{ marginBottom: '12px', fontWeight: 600 }}>Danger</h4>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+        <Button variant="danger" size="small">Small</Button>
+        <Button variant="danger" size="medium">Medium</Button>
+        <Button variant="danger" size="large">Large</Button>
+      </div>
+    </div>
+    
+    <div>
+      <h4 style={{ marginBottom: '12px', fontWeight: 600 }}>Success</h4>
+      <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap' }}>
+        <Button variant="success" size="small">Small</Button>
+        <Button variant="success" size="medium">Medium</Button>
+        <Button variant="success" size="large">Large</Button>
+      </div>
+    </div>
+  </div>
+);
+
+// Full width examples
+export const FullWidth = () => (
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+    <Button variant="default" fullWidth>Default Full Width</Button>
+    <Button variant="warning" fullWidth>Warning Full Width</Button>
+    <Button variant="danger" fullWidth>Danger Full Width</Button>
+    <Button variant="success" fullWidth>Success Full Width</Button>
   </div>
 );
 

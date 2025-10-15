@@ -1,39 +1,47 @@
 /**
- * Estilos del componente Button
+ * Button Component Styles
  * 
- * Utiliza CSS Modules para scoping automático
- * y variables CSS para consistencia con el sistema de diseño
+ * Uses CSS Modules for automatic scoping
+ * and CSS variables for design system consistency
  */
 
 .button {
-  /* Base */
+  /* Layout */
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-sm);
   
-  border: var(--border-width-thick) solid transparent;
+  /* Border - 3px solid black for Bauhaus style */
+  border: 3px solid var(--bauhaus-black);
+  border-radius: 0; /* Bauhaus sharp corners */
   
+  /* Typography */
   font-family: var(--font-family);
   font-weight: var(--font-weight-medium);
   
+  /* Transitions */
   transition: all var(--transition-fast);
   
-  /* Sin estilos por defecto del navegador */
+  /* Reset browser defaults */
   background: none;
   cursor: pointer;
   user-select: none;
 }
 
 
+.button:hover:not(:disabled) {
+  /* Bauhaus 3D effect - asymmetric border creates shadow illusion */
+  border-width: 1px 3px 3px 1px;
+}
 
-.button:active {
+.button:active:not(:disabled) {
+  /* Press down effect */
   transform: translateY(1px);
 }
 
 .button:disabled {
   opacity: 0.5;
-  border: none;
   cursor: not-allowed;
 }
 
@@ -41,30 +49,27 @@
   transform: none;
 }
 
-/* ===== VARIANTES ===== */
+/* ===== VARIANTS ===== */
 
-.primary {
+.default {
   background-color: var(--bauhaus-blue);
   color: var(--bauhaus-white);
-  border-color: var(--bauhaus-black);
 }
 
-.button.primary:hover:not(:disabled) {
+.default:hover:not(:disabled) {
   background-color: var(--bauhaus-blue-700);
   border-width: 1px 3px 3px 1px;
   border-style: solid;
   border-color: var(--bauhaus-black);
 }
 
-.button.primary:active:not(:disabled) {
+.default:active:not(:disabled) {
   background-color: var(--bauhaus-blue-900);
-  border: 3px solid var(--bauhaus-black);
 }
 
 .warning {
   background-color: var(--bauhaus-yellow);
   color: var(--bauhaus-black);
-  border: 3px solid var(--bauhaus-black);
 }
 
 .warning:hover:not(:disabled) {
@@ -76,7 +81,6 @@
 
 .warning:active:not(:disabled) {
   background-color: var(--bauhaus-yellow-900);
-  border: 3px solid var(--bauhaus-black);
 }
 
 .danger {
@@ -199,7 +203,28 @@
   border-color: var(--bauhaus-red);
 }
 
-/* ===== TAMAÑOS ===== */
+.danger:hover:not(:disabled) {
+  background-color: var(--bauhaus-red-700);
+}
+
+.danger:active:not(:disabled) {
+  background-color: var(--bauhaus-red-900);
+}
+
+.success {
+  background-color: var(--bauhaus-green);
+  color: var(--bauhaus-white);
+}
+
+.success:hover:not(:disabled) {
+  background-color: var(--bauhaus-green-700);
+}
+
+.success:active:not(:disabled) {
+  background-color: var(--bauhaus-green-900);
+}
+
+/* ===== SIZES ===== */
 
 .small {
   padding: var(--space-xs) var(--space-md);
@@ -219,7 +244,7 @@
   min-height: 48px;
 }
 
-/* ===== MODIFICADORES ===== */
+/* ===== MODIFIERS ===== */
 
 .fullWidth {
   width: 100%;
