@@ -16,7 +16,7 @@ export default {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['primary', 'secondary', 'outline'],
+      options: ['primary', 'warning', 'danger', 'secondary', 'secondary_warning', 'secondary_danger', 'outline'],
       description: 'Variante visual del botón',
     },
     size: {
@@ -47,10 +47,38 @@ export const Primary = {
   },
 };
 
+export const Warning = {
+  args: {
+    variant: 'warning',
+    children: 'Warning Button',
+  },
+};
+
+export const Danger = {
+  args: {
+    variant: 'danger',
+    children: 'Danger Button',
+  },
+};
+
 export const Secondary = {
   args: {
     variant: 'secondary',
     children: 'Secondary Button',
+  },
+};
+
+export const SecondaryWarning = {
+  args: {
+    variant: 'secondary_warning',
+    children: 'Secondary Warning Button',
+  },
+};
+
+export const SecondaryDanger = {
+  args: {
+    variant: 'secondary_danger',
+    children: 'Secondary Danger Button',
   },
 };
 
@@ -107,8 +135,26 @@ export const FullWidth = {
 export const AllVariants = () => (
   <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
     <Button variant="primary">Primary</Button>
+    <Button variant="warning">Warning</Button>
+    <Button variant="danger">Danger</Button>
+  </div>
+);
+
+// Todas las variantes juntas
+export const AllSecondary = () => (
+  <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
     <Button variant="secondary">Secondary</Button>
-    <Button variant="outline">Outline</Button>
+    <Button variant="secondary_warning">Warning</Button>
+    <Button variant="secondary_danger">Danger</Button>
+  </div>
+);
+
+// Todas las variantes juntas
+export const AllTertiary = () => (
+  <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+    <Button variant="tertiary">Tertiary</Button>
+    <Button variant="tertiary_warning">Warning</Button>
+    <Button variant="tertiary_danger">Danger</Button>
   </div>
 );
 

@@ -28,6 +28,11 @@
   --bauhaus-yellow-300: #F9B7004d;
   --bauhaus-yellow-700: #DDA202;
   --bauhaus-yellow-900: #CE9701;
+
+  /* Red colors */
+  --bauhaus-red-300: #CD3F2A4d;
+  --bauhaus-red-700: #AE3624;
+  --bauhaus-red-900: #872A1C;
   
   /* Neutros */
   --bauhaus-white: #ffffff;

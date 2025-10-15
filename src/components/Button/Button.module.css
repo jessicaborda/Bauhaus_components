@@ -25,12 +25,7 @@
   user-select: none;
 }
 
-.button:hover:not(:disabled) {
-  /* set top/bottom and left/right border widths, style and color */
-  border-width: 1px 3px 3px 1px;
-  border-style: solid;
-  border-color: var(--bauhaus-black);
-}
+
 
 .button:active {
   transform: translateY(1px);
@@ -56,6 +51,9 @@
 
 .button.primary:hover:not(:disabled) {
   background-color: var(--bauhaus-blue-700);
+  border-width: 1px 3px 3px 1px;
+  border-style: solid;
+  border-color: var(--bauhaus-black);
 }
 
 .button.primary:active:not(:disabled) {
@@ -63,30 +61,142 @@
   border: 3px solid var(--bauhaus-black);
 }
 
-.secondary {
+.warning {
   background-color: var(--bauhaus-yellow);
   color: var(--bauhaus-black);
   border: 3px solid var(--bauhaus-black);
 }
 
-.secondary:hover:not(:disabled) {
+.warning:hover:not(:disabled) {
   background-color: var(--bauhaus-yellow-700);
+  border-width: 1px 3px 3px 1px;
+  border-style: solid;
+  border-color: var(--bauhaus-black);
 }
 
-.secondary:active:not(:disabled) {
+.warning:active:not(:disabled) {
   background-color: var(--bauhaus-yellow-900);
   border: 3px solid var(--bauhaus-black);
 }
 
-.outline {
+.danger {
+  background-color: var(--bauhaus-red);
+  color: var(--bauhaus-white);
+  border: 3px solid var(--bauhaus-black);
+}
+
+.danger:hover:not(:disabled) {
+  background-color: var(--bauhaus-red-700);
+  border-width: 1px 3px 3px 1px;
+  border-style: solid;
+  border-color: var(--bauhaus-black);
+}
+
+.danger:active:not(:disabled) {
+  background-color: var(--bauhaus-red-900);
+  border: 3px solid var(--bauhaus-black);
+}
+
+.secondary {
   background-color: transparent;
   color: var(--bauhaus-blue);
+  border: 3px solid var(--bauhaus-blue);
+}
+
+.secondary:hover:not(:disabled) {
+  background-color: var(--bauhaus-blue);
+  color: var(--bauhaus-white);
+  border-color: var(--bauhaus-black);
+  border: 3px solid var(--bauhaus-black);
+}
+
+.secondary:active:not(:disabled) {
+  background-color: var(--bauhaus-blue-700);
+  border: 3px solid var(--bauhaus-black);
+}
+
+.secondary_warning {
+  background-color: transparent;
+  color: var(--bauhaus-yellow-700);
+  border: 3px solid var(--bauhaus-yellow);
+}
+
+.secondary_warning:hover:not(:disabled) {
+  background-color: var(--bauhaus-yellow);
+  color: var(--bauhaus-black);
+  border-color: var(--bauhaus-black);
+  border: 3px solid var(--bauhaus-black);
+}
+
+.secondary_warning:active:not(:disabled) {
+  background-color: var(--bauhaus-yellow-700);
+  border: 3px solid var(--bauhaus-black);
+}
+
+.secondary_danger {
+  background-color: transparent;
+  color: var(--bauhaus-red-700);
+  border: 3px solid var(--bauhaus-red);
+}
+
+.secondary_danger:hover:not(:disabled) {
+  background-color: var(--bauhaus-red);
+  color: var(--bauhaus-white);
+  border-color: var(--bauhaus-black);
+  border: 3px solid var(--bauhaus-black);
+}
+
+.secondary_danger:active:not(:disabled) {
+  background-color: var(--bauhaus-red-700);
+  border: 3px solid var(--bauhaus-black);
+}
+
+.tertiary {
+  background-color: transparent;
+  color: var(--bauhaus-blue);
+  border-bottom: 3px solid var(--bauhaus-blue);
+}
+
+.tertiary:hover:not(:disabled) {
+  border: 3px solid var(--bauhaus-blue);
+}
+
+.tertiary:active:not(:disabled) {
+  border-width: 1px 3px 3px 1px;
+  border-style: solid;
   border-color: var(--bauhaus-blue);
 }
 
-.outline:hover:not(:disabled) {
-  background-color: var(--bauhaus-blue);
-  color: var(--bauhaus-white);
+.tertiary_warning {
+  background-color: transparent;
+  color: var(--bauhaus-yellow-700);
+  border-bottom: 3px solid var(--bauhaus-yellow);
+}
+
+.tertiary_warning:hover:not(:disabled) {
+  border: 3px solid var(--bauhaus-yellow);
+}
+
+.tertiary_warning:active:not(:disabled) {
+  border-width: 1px 3px 3px 1px;
+  border-style: solid;
+  border-color: var(--bauhaus-yellow);
+}
+
+.tertiary_danger {
+  background-color: transparent;
+  color: var(--bauhaus-red-700);
+  border-bottom: 3px solid var(--bauhaus-red);
+}
+
+.tertiary_danger:hover:not(:disabled) {
+  border: 3px solid var(--bauhaus-red);
+}
+
+.tertiary_danger:active:not(:disabled) {
+  border-width: 1px 3px 3px 1px;
+  border-style: solid;
+  border-color: var(--bauhaus-red);
 }
 
 /* ===== TAMAÑOS ===== */
