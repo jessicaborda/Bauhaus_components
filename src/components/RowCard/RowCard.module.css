@@ -4,7 +4,7 @@
  * Una tarjeta simple y versátil con diferentes configuraciones
  */
 
-.card {
+.rowcard {
   /* Base */
   display: block;
   background-color: var(--bauhaus-white);
@@ -53,4 +53,3 @@
 .padding-large {
   padding: var(--space-xl);
 }
-

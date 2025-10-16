@@ -1,4 +1,4 @@
-import styles from './Card.module.css';
+import styles from './RowCard.module.css';
 
 /**
  * Componente Card
@@ -14,7 +14,7 @@ import styles from './Card.module.css';
  * @param {string} props.padding - Tamaño del padding: 'small', 'medium', 'large'
  * @param {Function} props.onClick - Función a ejecutar al hacer click (opcional)
  */
-export const Card = ({
+export const RowCard = ({
   children,
   shadow = false,
   bordered = true,
@@ -24,7 +24,7 @@ export const Card = ({
   ...props
 }) => {
   const classNames = [
-    styles.card,
+    styles.rowcard,
     shadow ? styles.shadow : '',
     bordered ? styles.bordered : '',
     hoverable ? styles.hoverable : '',
@@ -46,4 +46,3 @@ export const Card = ({
     </div>
   );
 };
-

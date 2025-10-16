@@ -7,6 +7,7 @@ import styles from './Button.module.css';
  * 
  * @param {Object} props - Propiedades del componente
  * @param {string} props.variant - Variante del botón: 'default', 'warning', 'danger', 'success'
+ * @param {string} props.type - Tipo de botón: 'button', 'submit', 'reset'
  * @param {string} props.size - Tamaño del botón: 'small', 'medium', 'large'
  * @param {boolean} props.disabled - Si el botón está deshabilitado
  * @param {boolean} props.fullWidth - Si el botón ocupa todo el ancho disponible
@@ -16,6 +17,7 @@ import styles from './Button.module.css';
 export const Button = ({
   children,
   variant = 'default',
+  type = 'button',
   size = 'medium',
   disabled = false,
   fullWidth = false,
@@ -25,6 +27,7 @@ export const Button = ({
   const classNames = [
     styles.button,
     styles[variant],
+    styles[type],
     styles[size],
     fullWidth ? styles.fullWidth : '',
   ]
