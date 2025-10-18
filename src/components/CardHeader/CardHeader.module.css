@@ -15,6 +15,7 @@
 .header {
   padding: 0 16px;
   display: block;
+  position: relative;
 }
 
 .blueAccent {
@@ -36,6 +37,22 @@
   height: auto;
   display: block;
   object-fit: cover;
+}
+
+.iconWrapper {
+  position: absolute;
+  top: 4px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerIcon {
+  width: 48px;
+  height: 48px;
+  display: block;
+  object-fit: contain;
 }
 
 .title {

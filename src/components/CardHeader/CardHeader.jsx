@@ -10,7 +10,8 @@ import { Button } from '../Button/Button';
  * @param {Object} props - Component properties
  * @param {string} props.header - Header text
  * @param {React.ReactNode} props.children - Main content
- * @param {string} props.image - Image URL to display in header
+ * @param {string} props.media - Media URL (image/icon) to display in header
+ * @param {string} props.mediaType - Type of media: 'icon' (48x48 top-right) or 'banner' (full-width)
  * @param {Object} props.button - Button configuration
  * @param {string} props.button.text - Button text
  * @param {string} props.button.variant - Button variant: 'solid', 'outline', 'text'
@@ -20,18 +21,24 @@ import { Button } from '../Button/Button';
 export const CardHeader = ({
   header,
   children,
-  image,
+  media,
+  mediaType,
   button,
   ...props
 }) => {
   return (
     <div className={styles.container} {...props}>
-      {/* Header section with optional blue accent or image */}
+      {/* Header section with optional blue accent, icon, or banner */}
       <div className={styles.header}>
-        {!image && <div className={styles.blueAccent}></div>}
-        {image && (
+        {!media && <div className={styles.blueAccent}></div>}
+        {media && mediaType === 'banner' && (
           <div className={styles.imageWrapper}>
-            <img src={image} alt={header} className={styles.headerImage} />
+            <img src={media} alt={header} className={styles.headerImage} />
+          </div>
+        )}
+        {media && mediaType === 'icon' && (
+          <div className={styles.iconWrapper}>
+            <img src={media} alt="" className={styles.headerIcon} />
           </div>
         )}
         <h3 className={styles.title}>{header}</h3>
