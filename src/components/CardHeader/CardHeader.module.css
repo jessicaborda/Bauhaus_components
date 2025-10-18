@@ -1,0 +1,63 @@
+/**
+ * CardHeader Component Styles
+ */
+
+.container {
+  /* Bauhaus thick border */
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bauhaus-white);
+  border: 8px solid var(--bauhaus-black);
+}
+
+/* ===== HEADER SECTION ===== */
+
+.header {
+  padding: 0 16px;
+  display: block;
+}
+
+.blueAccent {
+  width: 5px;
+  height: 20px;
+  background-color: var(--bauhaus-blue);
+}
+
+.title {
+  margin-bottom: 8px;
+  margin-top: 4px;
+}
+
+/* ===== DIVIDER ===== */
+
+.redDivider {
+  width: 80%;
+  height: 3px;
+  background-color: var(--bauhaus-red);
+}
+
+/* ===== CONTENT SECTION ===== */
+
+.content {
+  padding-right: 16px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.buttonWrapper {
+  align-self: flex-start;
+}
+
+.yellowAccent {
+  width: 5px;
+  height: 80px;
+  background-color: var(--bauhaus-yellow);
+}
+

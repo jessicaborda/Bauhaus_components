@@ -12,6 +12,7 @@
 // Export components
 export { Button } from './components/Button';
 export { Card } from './components/Card';
+export { CardHeader } from './components/CardHeader';
 export { RowCard } from './components/RowCard';
 
 // Import global styles
