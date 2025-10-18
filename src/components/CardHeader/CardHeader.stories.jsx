@@ -19,7 +19,7 @@ export default {
     },
     media: {
       control: 'text',
-      description: 'Media URL (image/icon) to display in header',
+      description: 'Media to display in header: URL string or React element (e.g., inline SVG)',
     },
     mediaType: {
       control: 'select',
@@ -121,7 +121,7 @@ export const WithBanner = {
   },
 };
 
-// With icon
+// With icon (URL)
 export const WithIcon = {
   args: {
     header: 'Card with Icon',
@@ -135,6 +135,30 @@ export const WithIcon = {
     button: {
       text: 'View Profile',
       variant: 'outline',
+      color: 'blue',
+    },
+  },
+};
+
+// With inline SVG icon
+export const WithInlineSVG = {
+  args: {
+    header: 'Card with Inline SVG',
+    media: (
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="10" fill="#005CAA" />
+        <path d="M12 8V12L15 15" stroke="white" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
+    mediaType: 'icon',
+    children: (
+      <p style={{ color: '#757575' }}>
+        You can pass inline SVG code as a React element instead of a URL.
+      </p>
+    ),
+    button: {
+      text: 'Learn More',
+      variant: 'solid',
       color: 'blue',
     },
   },

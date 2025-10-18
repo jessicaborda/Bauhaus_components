@@ -8,6 +8,7 @@
   flex-direction: column;
   background-color: var(--bauhaus-white);
   border: 8px solid var(--bauhaus-black);
+  position: relative;
 }
 
 /* ===== HEADER SECTION ===== */
@@ -71,9 +72,7 @@
 /* ===== CONTENT SECTION ===== */
 
 .content {
-  padding-right: 16px;
   display: flex;
-  align-items: flex-end;
 }
 
 .body {
@@ -88,6 +87,9 @@
 }
 
 .yellowAccent {
+  position: absolute;
+  bottom: 0;
+  right: 16px;
   width: 5px;
   height: 80px;
   background-color: var(--bauhaus-yellow);
