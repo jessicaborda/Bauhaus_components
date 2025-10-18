@@ -11,7 +11,7 @@ import { Button } from '../Button/Button';
  * @param {string} props.header - Header text
  * @param {React.ReactNode} props.children - Main content
  * @param {string|React.ReactNode} props.media - Media to display: URL string or React element (e.g., inline SVG)
- * @param {string} props.mediaType - Type of media: 'icon' (48x48 top-right) or 'banner' (full-width)
+ * @param {string} props.mediaType - Type of media: 'icon' (48x48 top-right), 'banner' (full-width), or 'lateral' (left side)
  * @param {Object} props.button - Button configuration
  * @param {string} props.button.text - Button text
  * @param {string} props.button.variant - Button variant: 'solid', 'outline', 'text'
@@ -29,6 +29,59 @@ export const CardHeader = ({
   // Check if media is a string (URL) or a React element
   const isMediaUrl = typeof media === 'string';
 
+  // Lateral layout: image on the left, content on the right
+  if (mediaType === 'lateral') {
+    return (
+      <div className={styles.container} {...props}>
+        <div className={styles.lateralLayout}>
+          {/* Lateral image */}
+          {media && (
+            <div className={styles.lateralImageWrapper}>
+              {isMediaUrl ? (
+                <img src={media} alt={header} className={styles.lateralImage} />
+              ) : (
+                <div className={styles.lateralImage}>{media}</div>
+              )}
+            </div>
+          )}
+          
+          {/* Content side */}
+          <div className={styles.lateralContent}>
+            {/* Header section */}
+            <div className={styles.header}>
+              <div className={styles.blueAccent}></div>
+              <h3 className={styles.title}>{header}</h3>
+            </div>
+
+            {/* Red divider */}
+            <div className={styles.redDivider}></div>
+
+            {/* Content and button section */}
+            <div className={styles.content}>
+              <div className={styles.body}>
+                {children}
+                {button && (
+                  <div className={styles.buttonWrapper}>
+                    <Button
+                      variant={button.variant || 'solid'}
+                      color={button.color || 'blue'}
+                      onClick={button.onClick}
+                    >
+                      {button.text}
+                    </Button>
+                  </div>
+                )}
+              </div>
+              {/* Yellow accent */}
+              <div className={styles.yellowAccent}></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Default layout: banner or icon
   return (
     <div className={styles.container} {...props}>
       {/* Header section with optional blue accent, icon, or banner */}

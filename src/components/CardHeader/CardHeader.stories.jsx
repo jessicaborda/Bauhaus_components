@@ -23,8 +23,8 @@ export default {
     },
     mediaType: {
       control: 'select',
-      options: ['icon', 'banner'],
-      description: 'Type of media: "icon" (48x48 top-right) or "banner" (full-width)',
+      options: ['icon', 'banner', 'lateral'],
+      description: 'Type of media: "icon" (48x48 top-right), "banner" (full-width), or "lateral" (left side)',
     },
     button: {
       control: 'object',
@@ -160,6 +160,25 @@ export const WithInlineSVG = {
       text: 'Learn More',
       variant: 'solid',
       color: 'blue',
+    },
+  },
+};
+
+// With lateral image
+export const WithLateralImage = {
+  args: {
+    header: 'Card with Lateral Image',
+    media: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=200&h=300&fit=crop',
+    mediaType: 'lateral',
+    children: (
+      <p style={{ color: '#757575' }}>
+        Lateral media displays the image on the left side of the card with the content on the right.
+      </p>
+    ),
+    button: {
+      text: 'Explore',
+      variant: 'solid',
+      color: 'red',
     },
   },
 };
