@@ -1,4 +1,4 @@
 /**
- * Export del componente Card
+ * RowCard component export
  */
 export { RowCard } from './RowCard';

@@ -1,11 +1,9 @@
 /**
- * Estilos del componente Card
- * 
- * Una tarjeta simple y versátil con diferentes configuraciones
+ * RowCard Component Styles
  */
 
 .rowcard {
-  /* Base */
+  /* Base styles */
   display: block;
   background-color: var(--bauhaus-white);
   transition: all var(--transition-normal);
@@ -14,7 +12,7 @@
   border-color: var(--bauhaus-black);
 }
 
-/* ===== MODIFICADORES ===== */
+/* ===== MODIFIERS ===== */
 
 .bordered {
   border-width: 8px;

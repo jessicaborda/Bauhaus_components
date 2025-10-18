@@ -1,7 +1,7 @@
 /**
- * Estilos globales de Bauhaus UI
+ * Bauhaus UI Global Styles
  * 
- * Reset básico y estilos base para asegurar consistencia
+ * Basic reset and base styles for consistency
  */
 
 * {
@@ -19,7 +19,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Mejoras de accesibilidad */
+/* Accessibility improvements */
 button {
   font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
@@ -29,7 +29,7 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* Enfoque visible para accesibilidad */
+/* Visible focus for accessibility */
 :focus-visible {
   outline: 2px solid var(--bauhaus-blue);
   outline-offset: 2px;

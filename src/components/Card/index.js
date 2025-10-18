@@ -1,5 +1,5 @@
 /**
- * Export del componente Card
+ * Card component export
  */
 export { Card } from './Card';
 

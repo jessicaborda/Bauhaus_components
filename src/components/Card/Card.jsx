@@ -1,18 +1,18 @@
 import styles from './Card.module.css';
 
 /**
- * Componente Card
+ * Card Component
  * 
- * Una tarjeta contenedora con borde y sombra opcional.
- * Ideal para agrupar contenido relacionado.
+ * Container card with optional border and shadow.
+ * Ideal for grouping related content.
  * 
- * @param {Object} props - Propiedades del componente
- * @param {React.ReactNode} props.children - Contenido de la tarjeta
- * @param {boolean} props.shadow - Si la tarjeta tiene sombra
- * @param {boolean} props.bordered - Si la tarjeta tiene borde
- * @param {boolean} props.hoverable - Si la tarjeta tiene efecto hover
- * @param {string} props.padding - Tamaño del padding: 'small', 'medium', 'large'
- * @param {Function} props.onClick - Función a ejecutar al hacer click (opcional)
+ * @param {Object} props - Component properties
+ * @param {React.ReactNode} props.children - Card content
+ * @param {boolean} props.shadow - Whether card has shadow
+ * @param {boolean} props.bordered - Whether card has border
+ * @param {boolean} props.hoverable - Whether card has hover effect
+ * @param {string} props.padding - Padding size: 'small', 'medium', 'large'
+ * @param {Function} props.onClick - Click handler function (optional)
  */
 export const Card = ({
   children,

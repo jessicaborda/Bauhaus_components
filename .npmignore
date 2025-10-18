@@ -1,24 +1,45 @@
-# No incluir en el paquete npm
+# Source files (only publish dist/)
 src/
 .storybook/
-storybook-static/
-node_modules/
 
-# Configuraciones de desarrollo
+# Development files
+*.stories.jsx
+*.stories.js
+*.test.jsx
+*.test.js
+*.spec.jsx
+*.spec.js
+
+# Build tools
 vite.config.js
+node_modules/
+.vscode/
+.idea/
+
+# Documentation (except README)
+CONTRIBUTING.md
+
+# Git
+.git/
 .gitignore
 
-# Documentación de desarrollo
-*.md
-!README.md
+# Environment
+.env
+.env.*
 
-# Tests
-*.test.js
-*.test.jsx
-*.spec.js
-*.spec.jsx
+# OS files
+.DS_Store
+Thumbs.db
 
-# Stories de Storybook
-*.stories.js
-*.stories.jsx
+# Logs
+*.log
+npm-debug.log*
 
+# Testing
+coverage/
+
+# Storybook output
+storybook-static/
+
+# Build artifacts
+dist-ssr/

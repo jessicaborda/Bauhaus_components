@@ -1,21 +1,21 @@
 /**
- * Bauhaus UI - UI Kit minimalista
+ * Bauhaus UI - Minimalist UI Kit
  * 
- * Este es el punto de entrada principal de la librería.
- * Aquí exportamos todos los componentes disponibles.
+ * Main entry point for the library.
+ * Exports all available components.
  * 
- * Uso:
- * import { Button, Card } from 'bauhaus-ui';
- * import 'bauhaus-ui/styles'; // Importar estilos
+ * Usage:
+ * import { Button, Card, Badge, RowCard } from 'bauhaus-ui';
+ * import 'bauhaus-ui/styles';
  */
 
-// Exportar componentes
+// Export components
 export { Button } from './components/Button';
 export { Card } from './components/Card';
 export { Badge } from './components/Badge';
+export { RowCard } from './components/RowCard';
 
-// También exportar estilos para que el usuario pueda importarlos
-// El usuario debe importar: import 'bauhaus-ui/styles';
+// Import global styles
 import './styles/variables.css';
 import './styles/global.css';
 

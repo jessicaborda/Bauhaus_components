@@ -3,12 +3,11 @@ import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 
 /**
- * Configuración de Vite para construir la librería Bauhaus UI
+ * Vite configuration for building Bauhaus UI library
  * 
- * Esta configuración permite:
- * - Construir la librería en formato ESM y UMD
- * - Incluir React como dependencia externa (peer dependency)
- * - Generar el CSS en un archivo separado
+ * - Builds library in ESM and UMD formats
+ * - Externalizes React as peer dependency
+ * - Generates CSS in separate file
  */
 export default defineConfig({
   plugins: [react()],
@@ -20,7 +19,7 @@ export default defineConfig({
       fileName: (format) => `bauhaus-ui.${format === 'es' ? 'js' : 'umd.cjs'}`,
     },
     rollupOptions: {
-      // Asegurarse de que React no se incluya en el bundle
+      // Ensure React is not bundled
       external: ['react', 'react-dom', 'react/jsx-runtime'],
       output: {
         globals: {

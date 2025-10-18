@@ -1,22 +1,25 @@
 import styles from './Button.module.css';
 
 /**
- * Componente Button
+ * Button Component
  * 
- * Un botón versátil con múltiples variantes y tamaños.
+ * Versatile button with multiple variants, colors, and sizes.
+ * Inspired by Bauhaus design with solid borders and clean geometry.
  * 
- * @param {Object} props - Propiedades del componente
- * @param {string} props.variant - Variante del botón: 'default', 'warning', 'danger', 'success'
- * @param {string} props.type - Tipo de botón: 'button', 'submit', 'reset'
- * @param {string} props.size - Tamaño del botón: 'small', 'medium', 'large'
- * @param {boolean} props.disabled - Si el botón está deshabilitado
- * @param {boolean} props.fullWidth - Si el botón ocupa todo el ancho disponible
- * @param {Function} props.onClick - Función a ejecutar al hacer click
- * @param {React.ReactNode} props.children - Contenido del botón
+ * @param {Object} props - Component properties
+ * @param {string} props.variant - Button style: 'solid', 'outline', 'text'
+ * @param {string} props.color - Button color: 'blue', 'red', 'yellow', 'green', 'orange', 'purple'
+ * @param {string} props.type - HTML button type: 'button', 'submit', 'reset'
+ * @param {string} props.size - Button size: 'small', 'medium', 'large'
+ * @param {boolean} props.disabled - Whether button is disabled
+ * @param {boolean} props.fullWidth - Whether button takes full width
+ * @param {Function} props.onClick - Click handler function
+ * @param {React.ReactNode} props.children - Button content
  */
 export const Button = ({
   children,
-  variant = 'default',
+  variant = 'solid',
+  color = 'blue',
   type = 'button',
   size = 'medium',
   disabled = false,
@@ -24,10 +27,11 @@ export const Button = ({
   onClick,
   ...props
 }) => {
+  // Build CSS classes
   const classNames = [
     styles.button,
     styles[variant],
-    styles[type],
+    styles[`color-${color}`],
     styles[size],
     fullWidth ? styles.fullWidth : '',
   ]
@@ -37,6 +41,7 @@ export const Button = ({
   return (
     <button
       className={classNames}
+      type={type}
       disabled={disabled}
       onClick={onClick}
       {...props}

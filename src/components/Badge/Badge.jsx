@@ -1,14 +1,14 @@
 import styles from './Badge.module.css';
 
 /**
- * Componente Badge
+ * Badge Component
  * 
- * Una etiqueta pequeña para mostrar estados, categorías o información destacada.
+ * Small label for displaying status, categories, or highlighted information.
  * 
- * @param {Object} props - Propiedades del componente
- * @param {React.ReactNode} props.children - Contenido del badge (texto)
- * @param {string} props.variant - Variante de color: 'success', 'error', 'warning', 'info', 'neutral'
- * @param {string} props.size - Tamaño: 'small', 'medium'
+ * @param {Object} props - Component properties
+ * @param {React.ReactNode} props.children - Badge content (text)
+ * @param {string} props.variant - Color variant: 'success', 'error', 'warning', 'info', 'neutral'
+ * @param {string} props.size - Size: 'small', 'medium'
  */
 export const Badge = ({
   children,

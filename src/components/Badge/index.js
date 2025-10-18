@@ -1,5 +1,5 @@
 /**
- * Export del componente Badge
+ * Badge component export
  */
 export { Badge } from './Badge';
 
