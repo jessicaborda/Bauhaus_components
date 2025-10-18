@@ -21,7 +21,18 @@ export default {
   },
 };
 
-// Basic card
+// Simple wrapper - just text
+export const SimpleWrapper = {
+  args: {
+    children: (
+      <div style={{ padding: '24px' }}>
+        <p>This is a simple card wrapper with just text inside. The Card component provides the Bauhaus-style border.</p>
+      </div>
+    ),
+  },
+};
+
+// Basic card with content
 export const Basic = {
   args: {
     children: (

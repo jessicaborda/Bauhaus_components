@@ -8,7 +8,6 @@
   background-color: var(--bauhaus-white);
   border: 8px solid var(--bauhaus-black);
   transition: all var(--transition-normal);
-  padding: var(--space-md);
 }
 
 /* ===== MODIFIERS ===== */

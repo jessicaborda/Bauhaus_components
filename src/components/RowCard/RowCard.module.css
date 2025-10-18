@@ -3,7 +3,7 @@
  */
 
 .rowcard {
-  /* Base styles - Bauhaus always has visible border */
+  /* Base styles - Bauhaus always has visible border, no padding */
   display: block;
   background-color: var(--bauhaus-white);
   border: 8px solid var(--bauhaus-black);
