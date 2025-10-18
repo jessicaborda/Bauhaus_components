@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Removed
+
+#### Badge Component Removed (Breaking Change)
+
+The Badge component has been removed as it doesn't align with pure Bauhaus design principles.
+
+**Migration:**
+- Remove any `Badge` imports and usage from your code
+- Consider using custom implementations if needed
+
 ### Changed
 
 #### Button Component Refactored (Breaking Change)
@@ -49,6 +59,14 @@ The Button component has been redesigned with a more flexible and maintainable a
 - Follows industry standards (Material UI, Chakra UI pattern)
 - Better CSS custom properties usage
 
+#### Card Components Simplified
+
+Card and RowCard components have been streamlined:
+- Removed unused `padding` prop (use CSS for custom padding)
+- Removed redundant `bordered` prop (Bauhaus always has visible borders)
+- Simplified CSS from 54 to 29 lines (46% reduction)
+- All documentation translated to English
+
 ### Added
 
 - Export `RowCard` component (was missing from main exports)
@@ -60,6 +78,8 @@ The Button component has been redesigned with a more flexible and maintainable a
 
 - Button variant naming inconsistency between stories and component
 - Missing RowCard export in `src/index.js`
+- Card/RowCard props that didn't work (`padding`, `bordered`)
+- Button stories simplified (removed redundant individual color stories)
 
 ## [0.1.0] - Initial Release
 

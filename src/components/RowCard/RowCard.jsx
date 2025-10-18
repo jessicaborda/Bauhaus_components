@@ -3,30 +3,25 @@ import styles from './RowCard.module.css';
 /**
  * RowCard Component
  * 
- * Horizontal card container with optional border and shadow.
+ * Horizontal card container with optional shadow and hover effect.
  * Ideal for list items and horizontal layouts.
  * 
  * @param {Object} props - Component properties
  * @param {React.ReactNode} props.children - Card content
  * @param {boolean} props.shadow - Whether card has shadow
- * @param {boolean} props.bordered - Whether card has border
  * @param {boolean} props.hoverable - Whether card has hover effect
- * @param {string} props.padding - Padding size: 'small', 'medium', 'large'
  * @param {Function} props.onClick - Click handler function (optional)
  */
 export const RowCard = ({
   children,
   shadow = false,
-  bordered = true,
   hoverable = false,
-  padding = 'small',
   onClick,
   ...props
 }) => {
   const classNames = [
     styles.rowcard,
     shadow ? styles.shadow : '',
-    bordered ? styles.bordered : '',
     hoverable ? styles.hoverable : '',
   ]
     .filter(Boolean)

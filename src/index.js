@@ -5,14 +5,13 @@
  * Exports all available components.
  * 
  * Usage:
- * import { Button, Card, Badge, RowCard } from 'bauhaus-ui';
+ * import { Button, Card, RowCard } from 'bauhaus-ui';
  * import 'bauhaus-ui/styles';
  */
 
 // Export components
 export { Button } from './components/Button';
 export { Card } from './components/Card';
-export { Badge } from './components/Badge';
 export { RowCard } from './components/RowCard';
 
 // Import global styles

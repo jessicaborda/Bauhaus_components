@@ -1,10 +1,9 @@
 import { Button } from './Button';
 
 /**
- * Button Component Stories (Refactored)
+ * Button Component Stories
  * 
- * Nueva arquitectura con variant + color para mayor flexibilidad.
- * Ahora es mucho más fácil crear cualquier combinación de estilo y color.
+ * Modern architecture with variant + color for maximum flexibility.
  */
 
 export default {
@@ -15,34 +14,34 @@ export default {
     variant: {
       control: 'select',
       options: ['solid', 'outline', 'text'],
-      description: 'Estilo visual del botón',
+      description: 'Button style',
     },
     color: {
       control: 'select',
       options: ['blue', 'red', 'yellow', 'green', 'orange', 'purple'],
-      description: 'Color del botón',
+      description: 'Button color',
     },
     size: {
       control: 'select',
       options: ['small', 'medium', 'large'],
-      description: 'Tamaño del botón',
+      description: 'Button size',
     },
     disabled: {
       control: 'boolean',
-      description: 'Estado deshabilitado',
+      description: 'Disabled state',
     },
     fullWidth: {
       control: 'boolean',
-      description: 'Botón de ancho completo',
+      description: 'Full width button',
     },
     children: {
       control: 'text',
-      description: 'Contenido del botón',
+      description: 'Button content',
     },
   },
 };
 
-// ===== PLAYGROUND =====
+// ===== INTERACTIVE PLAYGROUND =====
 
 export const Playground = {
   args: {
@@ -50,101 +49,6 @@ export const Playground = {
     color: 'blue',
     size: 'medium',
     children: 'Button',
-  },
-};
-
-// ===== VARIANTS =====
-
-export const Solid = {
-  args: {
-    variant: 'solid',
-    color: 'blue',
-    children: 'Solid Button',
-  },
-};
-
-export const Outline = {
-  args: {
-    variant: 'outline',
-    color: 'blue',
-    children: 'Outline Button',
-  },
-};
-
-export const Text = {
-  args: {
-    variant: 'text',
-    color: 'blue',
-    children: 'Text Button',
-  },
-};
-
-// ===== COLORS =====
-
-export const ColorBlue = {
-  args: {
-    color: 'blue',
-    children: 'Blue',
-  },
-};
-
-export const ColorRed = {
-  args: {
-    color: 'red',
-    children: 'Red',
-  },
-};
-
-export const ColorYellow = {
-  args: {
-    color: 'yellow',
-    children: 'Yellow',
-  },
-};
-
-export const ColorGreen = {
-  args: {
-    color: 'green',
-    children: 'Green',
-  },
-};
-
-// ===== SIZES =====
-
-export const Small = {
-  args: {
-    size: 'small',
-    children: 'Small Button',
-  },
-};
-
-export const Medium = {
-  args: {
-    size: 'medium',
-    children: 'Medium Button',
-  },
-};
-
-export const Large = {
-  args: {
-    size: 'large',
-    children: 'Large Button',
-  },
-};
-
-// ===== STATES =====
-
-export const Disabled = {
-  args: {
-    disabled: true,
-    children: 'Disabled Button',
-  },
-};
-
-export const FullWidth = {
-  args: {
-    fullWidth: true,
-    children: 'Full Width Button',
   },
 };
 
@@ -282,16 +186,16 @@ export const RealWorldExample = () => (
       border: '2px solid #e0e0e0',
       borderRadius: '8px'
     }}>
-      <h3 style={{ marginTop: 0, marginBottom: '8px' }}>¿Eliminar esta cuenta?</h3>
+      <h3 style={{ marginTop: 0, marginBottom: '8px' }}>Delete Account?</h3>
       <p style={{ color: '#666', marginBottom: '24px' }}>
-        Esta acción no se puede deshacer. Todos tus datos serán eliminados permanentemente.
+        This action cannot be undone. All your data will be permanently deleted.
       </p>
       <div style={{ display: 'flex', gap: '12px', justifyContent: 'flex-end' }}>
         <Button variant="outline" color="blue">
-          Cancelar
+          Cancel
         </Button>
         <Button variant="solid" color="red">
-          Eliminar
+          Delete
         </Button>
       </div>
     </div>

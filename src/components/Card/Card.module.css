@@ -3,22 +3,15 @@
  */
 
 .card {
-  /* Base styles */
+  /* Base styles - Bauhaus always has visible border */
   display: block;
   background-color: var(--bauhaus-white);
+  border: 8px solid var(--bauhaus-black);
   transition: all var(--transition-normal);
-  border-width: 8px;
-  border-style: solid;
-  border-color: var(--bauhaus-black);
+  padding: var(--space-md);
 }
 
 /* ===== MODIFIERS ===== */
-
-.bordered {
-  border-width: 8px;
-  border-style: solid;
-  border-color: var(--bauhaus-black);
-}
 
 .shadow {
   box-shadow: var(--shadow-md);
@@ -37,18 +30,3 @@
   transform: translateY(0);
   box-shadow: var(--shadow-md);
 }
-
-/* ===== PADDING ===== */
-
-.padding-small {
-  padding: var(--space-md);
-}
-
-.padding-medium {
-  padding: var(--space-lg);
-}
-
-.padding-large {
-  padding: var(--space-xl);
-}
-

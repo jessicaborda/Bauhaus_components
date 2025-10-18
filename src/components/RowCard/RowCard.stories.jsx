@@ -2,7 +2,7 @@ import { RowCard } from './RowCard';
 import { Button } from '../Button/Button';
 
 /**
- * Stories de Storybook para el componente RowCard
+ * RowCard Component Stories
  */
 
 export default {
@@ -12,242 +12,200 @@ export default {
   argTypes: {
     shadow: {
       control: 'boolean',
-      description: 'Muestra sombra en la tarjeta',
-    },
-    bordered: {
-      control: 'boolean',
-      description: 'Muestra borde en la tarjeta',
+      description: 'Whether card has shadow',
     },
     hoverable: {
       control: 'boolean',
-      description: 'Efecto hover en la tarjeta',
+      description: 'Whether card has hover effect',
     },
   },
 };
 
-// Story básica
+// Basic horizontal card
 export const Basic = {
   args: {
     children: (
-      <div style={{ display: 'flex',
-                    alignItems: 'stretch',
-                    position: 'relative',
-                    minHeight: '300px',
-                    border: '4px solid var(--bauhaus-black)',
-                  }}
-      >
-
-        {/* Sección título vertical */}
+      <div style={{ 
+        display: 'flex',
+        alignItems: 'stretch',
+        minHeight: '300px',
+        border: '4px solid var(--bauhaus-black)',
+      }}>
+        {/* Vertical title section */}
         <div style={{
-                      position: 'relative',
-                      width: '60px',
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                    }}
-        >
-
-    {/* Línea azul */}
+          position: 'relative',
+          width: '60px',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
           <div style={{
-                        position: 'absolute',
-                        bottom: '30%',
-                        left: '20px',
-                        transform: 'translateX(-50%)',
-                        width: '40px',
-                        height: '6px',
-                        backgroundColor: 'var(--bauhaus-blue)',
-                      }}
-          ></div>
-
-    {/* Título card */}
+            position: 'absolute',
+            bottom: '30%',
+            left: '20px',
+            transform: 'translateX(-50%)',
+            width: '40px',
+            height: '6px',
+            backgroundColor: 'var(--bauhaus-blue)',
+          }}></div>
+          
           <h3 style={{
-                      position: 'absolute',
-                      left: '30%',
-                      top: '50%',
-                      transform: 'translate(-50%, -50%) rotate(-90deg)',
-                      transformOrigin: 'center center',
-                      whiteSpace: 'nowrap',
-                      fontSize: '1.2rem',
-                      fontWeight: 'bold',
-                      margin: 0,
-                    }}> Card Title
-          </h3>
-      </div>
-
-        {/* Línea roja */}
-        <div style={{ width: '4px',
-                      backgroundColor: 'var(--bauhaus-red)',
-                      margin: '0 0 2rem 0',
-                    }}> 
+            position: 'absolute',
+            left: '30%',
+            top: '50%',
+            transform: 'translate(-50%, -50%) rotate(-90deg)',
+            whiteSpace: 'nowrap',
+            fontSize: '1.2rem',
+            fontWeight: 'bold',
+            margin: 0,
+          }}>Card Title</h3>
         </div>
 
-    {/* Contenido principal card */}
-        <div style={{ flex: 1,
-                      display: 'flex',
-                      alignItems: 'flex-end',
-                      justifyContent: 'space-between',
-                      paddingRight: '24px',
-                    }}
-        >
+        {/* Red divider */}
+        <div style={{ 
+          width: '4px',
+          backgroundColor: 'var(--bauhaus-red)',
+          margin: '0 0 2rem 0',
+        }}></div>
 
-          <div style={{ padding: '16px',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'flex-start',
-                        alignItems: 'flex-start',
-                        gap: '16px', 
-                      }}
-          >
+        {/* Main content */}
+        <div style={{ 
+          flex: 1,
+          display: 'flex',
+          alignItems: 'flex-end',
+          justifyContent: 'space-between',
+          paddingRight: '24px',
+        }}>
+          <div style={{ 
+            padding: '16px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '16px', 
+          }}>
             <p style={{ color: '#757575' }}>
-               This is a basic card component. You can put any content inside.
+              This is a horizontal card layout. Ideal for list items.
             </p>
-            <Button variant="default">Button</Button>
+            <Button variant="solid" color="blue">Action</Button>
           </div>
 
-          {/* Línea amarilla */}
-        <div style={{ width:'6px', height: '200px', backgroundColor: 'var(--bauhaus-yellow)' }}></div>
+          {/* Yellow accent */}
+          <div style={{ width:'6px', height: '200px', backgroundColor: 'var(--bauhaus-yellow)' }}></div>
         </div>
       </div>
     ),
   },
 };
 
-// Story con icono
+// With icon
 export const WithIcon = {
   args: {
     children: (
-      <div style={{ display: 'flex',
-                    alignItems: 'stretch',
-                    position: 'relative',
-                    minHeight: '300px',
-                    border: '4px solid var(--bauhaus-black)',
-                  }}
-      >
-
-        {/* Sección título vertical */}
+      <div style={{ 
+        display: 'flex',
+        alignItems: 'stretch',
+        minHeight: '300px',
+        border: '4px solid var(--bauhaus-black)',
+      }}>
         <div style={{
-                      position: 'relative',
-                      width: '60px',
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                    }}
-        >
-
-    {/* Icono */}
-          <img src="assets/icon_default.svg" alt="icon_default" style={{ 
-                        position: 'absolute',
-                        bottom: '20%',
-                        left: '50%',
-                        transform: 'translateX(-50%)',
-                        width: '32px', 
-                        height: '32px' }} />
-
-    {/* Título card */}
+          position: 'relative',
+          width: '60px',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+          <img src="assets/icon_default.svg" alt="Icon" style={{ 
+            position: 'absolute',
+            bottom: '20%',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: '32px', 
+            height: '32px',
+          }} />
+          
           <h3 style={{
-                      position: 'absolute',
-                      left: '50%',
-                      top: '50%',
-                      transform: 'translate(-50%, -50%) rotate(-90deg)',
-                      transformOrigin: 'center center',
-                      whiteSpace: 'nowrap',
-                      fontSize: '1.2rem',
-                      fontWeight: 'bold',
-                      margin: 0,
-                    }}> Card Title
-          </h3>
-      </div>
-
-        {/* Línea roja */}
-        <div style={{ width: '4px',
-                      backgroundColor: 'var(--bauhaus-red)',
-                      margin: '0 0 2rem 0',
-                    }}> 
+            position: 'absolute',
+            left: '50%',
+            top: '50%',
+            transform: 'translate(-50%, -50%) rotate(-90deg)',
+            whiteSpace: 'nowrap',
+            fontSize: '1.2rem',
+            fontWeight: 'bold',
+            margin: 0,
+          }}>Card Title</h3>
         </div>
 
-    {/* Contenido principal card */}
-        <div style={{ flex: 1,
-                      display: 'flex',
-                      alignItems: 'flex-end',
-                      justifyContent: 'space-between',
-                      paddingRight: '24px',
-                    }}
-        >
+        <div style={{ 
+          width: '4px',
+          backgroundColor: 'var(--bauhaus-red)',
+          margin: '0 0 2rem 0',
+        }}></div>
 
-          <div style={{ padding: '16px',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'flex-start',
-                        alignItems: 'flex-start',
-                        gap: '16px', 
-                      }}
-          >
+        <div style={{ 
+          flex: 1,
+          display: 'flex',
+          alignItems: 'flex-end',
+          justifyContent: 'space-between',
+          paddingRight: '24px',
+        }}>
+          <div style={{ 
+            padding: '16px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '16px', 
+          }}>
             <p style={{ color: '#757575' }}>
-               This is a basic card component. You can put any content inside.
+              Horizontal card with icon decoration.
             </p>
-            <Button variant="default">Button</Button>
+            <Button variant="solid" color="blue">Action</Button>
           </div>
           
-          {/* Línea amarilla */}
-        <div style={{ width:'6px', height: '200px', backgroundColor: 'var(--bauhaus-yellow)' }}></div>
+          <div style={{ width:'6px', height: '200px', backgroundColor: 'var(--bauhaus-yellow)' }}></div>
         </div>
       </div>
     ),
   },
 };
 
-// Story con imagen
+// With image
 export const WithImage = {
   args: {
     children: (
-      <div style={{ display: 'flex',
-                    alignItems: 'stretch',
-                    position: 'relative',
-                    minHeight: '300px',
-                    border: '4px solid var(--bauhaus-black)',
-                  }}
-      >
-
-        {/* Sección título vertical */}
+      <div style={{ 
+        display: 'flex',
+        alignItems: 'stretch',
+        minHeight: '300px',
+        border: '4px solid var(--bauhaus-black)',
+      }}>
         <div style={{
-                      position: 'relative',
-                      width: '40%',
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                    }}
-        >
+          position: 'relative',
+          width: '40%',
+          display: 'flex',
+        }}>
+          <img src="assets/img_default.jpg" alt="Card" style={{ width: '100%', height:'100%', objectFit: 'cover' }} />  
+        </div>
 
-        <img src="assets/img_default.jpg" alt="image_default" style={{ width: '100%', height:'100%' }} />  
-      </div>
-
-    {/* Contenido principal card */}
-        <div style={{ flex: 1,
-                      display: 'flex',
-                      alignItems: 'flex-end',
-                      justifyContent: 'space-between',
-                      paddingRight: '24px',
-                    }}
-        >
-
-          <div style={{ padding: '16px',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'flex-start',
-                        alignItems: 'flex-start',
-                        gap: '16px', 
-                      }}
-          >
-            <h3 style={{ marginBottom: '8px' }}>Título de la card</h3>
+        <div style={{ 
+          flex: 1,
+          display: 'flex',
+          alignItems: 'flex-end',
+          justifyContent: 'space-between',
+          paddingRight: '24px',
+        }}>
+          <div style={{ 
+            padding: '16px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '16px', 
+          }}>
+            <h3>Card Title</h3>
             <div style={{ width:'60%', height: '4px', backgroundColor: 'var(--bauhaus-red)' }}></div>
             <p style={{ color: '#757575' }}>
-               This is a basic card component. You can put any content inside.
+              Horizontal card with image on the side.
             </p>
-            <Button variant="default">Button</Button>
+            <Button variant="solid" color="blue">Learn More</Button>
           </div>
           
-          {/* Línea amarilla */}
-        <div style={{ width:'6px', height: '200px', backgroundColor: 'var(--bauhaus-yellow)' }}></div>
+          <div style={{ width:'6px', height: '200px', backgroundColor: 'var(--bauhaus-yellow)' }}></div>
         </div>
       </div>
     ),

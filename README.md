@@ -23,7 +23,7 @@ npm install bauhaus-ui
 ## Quick Start
 
 ```jsx
-import { Button, Card, Badge } from 'bauhaus-ui';
+import { Button, Card, RowCard } from 'bauhaus-ui';
 import 'bauhaus-ui/styles';
 
 function App() {
@@ -33,7 +33,6 @@ function App() {
       <Button variant="solid" color="blue" onClick={() => alert('Click!')}>
         Click Me
       </Button>
-      <Badge variant="success">New</Badge>
     </Card>
   );
 }
@@ -78,10 +77,10 @@ Versatile button component with multiple variants and colors.
 
 ### Card
 
-Container component for grouping related content.
+Container component for grouping related content. Features Bauhaus-style bold borders.
 
 ```jsx
-<Card shadow hoverable padding="medium">
+<Card shadow hoverable>
   <h3>Card Title</h3>
   <p>Card content goes here</p>
 </Card>
@@ -89,24 +88,23 @@ Container component for grouping related content.
 
 **Props:**
 - `shadow`: `boolean` - Adds shadow (default: `false`)
-- `bordered`: `boolean` - Shows border (default: `true`)
 - `hoverable`: `boolean` - Hover effect (default: `false`)
-- `padding`: `'small'` | `'medium'` | `'large'` (default: `'small'`)
 - `onClick`: `() => void` - Makes card clickable
 
-### Badge
+### RowCard
 
-Small label for displaying status or categories.
+Horizontal card layout ideal for list items and side-by-side content.
 
 ```jsx
-<Badge variant="success" size="medium">Active</Badge>
-<Badge variant="error">Error</Badge>
-<Badge variant="warning">Warning</Badge>
+<RowCard shadow hoverable>
+  {/* Horizontal layout content */}
+</RowCard>
 ```
 
 **Props:**
-- `variant`: `'success'` | `'error'` | `'warning'` | `'info'` | `'neutral'`
-- `size`: `'small'` | `'medium'`
+- `shadow`: `boolean` - Adds shadow (default: `false`)
+- `hoverable`: `boolean` - Hover effect (default: `false`)
+- `onClick`: `() => void` - Makes card clickable
 
 ## Design System
 
@@ -203,7 +201,6 @@ bauhaus-ui/
 │   ├── components/       # React components
 │   │   ├── Button/
 │   │   ├── Card/
-│   │   ├── Badge/
 │   │   └── RowCard/
 │   ├── styles/           # Global styles & variables
 │   │   ├── variables.css

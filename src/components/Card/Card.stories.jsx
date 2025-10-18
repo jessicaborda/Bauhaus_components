@@ -2,7 +2,7 @@ import { Card } from './Card';
 import { Button } from '../Button/Button';
 
 /**
- * Stories de Storybook para el componente Card
+ * Card Component Stories
  */
 
 export default {
@@ -12,88 +12,78 @@ export default {
   argTypes: {
     shadow: {
       control: 'boolean',
-      description: 'Muestra sombra en la tarjeta',
-    },
-    bordered: {
-      control: 'boolean',
-      description: 'Muestra borde en la tarjeta',
+      description: 'Whether card has shadow',
     },
     hoverable: {
       control: 'boolean',
-      description: 'Efecto hover en la tarjeta',
+      description: 'Whether card has hover effect',
     },
   },
 };
 
-// Story básica
+// Basic card
 export const Basic = {
   args: {
     children: (
       <div>
-        <div style={{ padding: '0 16px', display: 'block', alignItems: 'center' }}>
+        <div style={{ padding: '0 16px', display: 'block' }}>
           <div style={{ width:'5px', height: '20px', backgroundColor: 'var(--bauhaus-blue)' }}></div>
           <h3 style={{ marginBottom: '8px' }}>Card Title</h3>
         </div>
         <div style={{ width:'80%', height: '3px', backgroundColor: 'var(--bauhaus-red)' }}></div>
-        <div style={{ paddingRight: '16px', display: 'flex', flexDirection: 'row', alignItems: 'end' }}>
-          <div style={{ padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: '16px' }}>
+        <div style={{ paddingRight: '16px', display: 'flex', alignItems: 'end' }}>
+          <div style={{ padding: '16px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
             <p style={{ color: '#757575' }}>
-               This is a basic card component. You can put any content inside.
+              This is a basic card component. You can put any content inside.
             </p>
-            <Button variant="default">Button</Button>
+            <Button variant="solid" color="blue">Action</Button>
           </div>
-        <div style={{ width:'5px', height: '80px', backgroundColor: 'var(--bauhaus-yellow)' }}></div>
+          <div style={{ width:'5px', height: '80px', backgroundColor: 'var(--bauhaus-yellow)' }}></div>
         </div>
       </div>
     ),
   },
 };
 
-// Con imagen
+// With image
 export const WithImage = {
   args: {
     shadow: true,
     children: (
       <div>
-        <img src="assets/img_default.jpg" alt="image_default" style={{ width: '100%' }} />
-        <div style={{ padding: '16px', display: 'block', alignItems: 'center' }}>
-          <h3 style={{ marginBottom: '8px' }}>Card con Sombra</h3>
-        </div>
-        <div style={{ width:'80%', height: '3px', backgroundColor: 'var(--bauhaus-red)' }}></div>
-        <div style={{ paddingRight: '16px', display: 'flex', flexDirection: 'row', alignItems: 'end' }}>
-          <div style={{ padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: '16px' }}>
-            <p style={{ color: '#757575' }}>
-               This is a basic card component. You can put any content inside.
-            </p>
-            <Button variant="default">Button</Button>
-          </div>
-        <div style={{ width:'5px', height: '80px', backgroundColor: 'var(--bauhaus-yellow)' }}></div>
+        <img src="assets/img_default.jpg" alt="Card" style={{ width: '100%' }} />
+        <div style={{ padding: '16px' }}>
+          <h3 style={{ marginBottom: '8px' }}>Card with Shadow</h3>
+          <div style={{ width:'80%', height: '3px', backgroundColor: 'var(--bauhaus-red)', margin: '8px 0' }}></div>
+          <p style={{ color: '#757575', marginBottom: '16px' }}>
+            Card with image and shadow effect.
+          </p>
+          <Button variant="solid" color="blue">Learn More</Button>
         </div>
       </div>
     ),
   },
 };
 
-// Con Iconos
+// With icon
 export const WithIcon = {
   args: {
     children: (
       <div>
         <div style={{ padding: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <h3 style={{ marginBottom: '8px' }}>Card Title</h3>
-          <img src="assets/icon_default.svg" alt="icon_default" style={{ width: '32px', height: '32px' }} />
+          <h3>Card Title</h3>
+          <img src="assets/icon_default.svg" alt="Icon" style={{ width: '32px', height: '32px' }} />
         </div>
         <div style={{ width:'80%', height: '3px', backgroundColor: 'var(--bauhaus-red)' }}></div>
-        <div style={{ paddingRight: '16px', display: 'flex', flexDirection: 'row', alignItems: 'end' }}>
-          <div style={{ padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: '16px' }}>
+        <div style={{ padding: '16px', display: 'flex', alignItems: 'end', gap: '16px' }}>
+          <div style={{ flex: 1 }}>
             <p style={{ color: '#757575' }}>
-               This is a basic card component. You can put any content inside.
+              Card with icon and content.
             </p>
-            <Button variant="default">Button</Button>
           </div>
-        <div style={{ width:'5px', height: '80px', backgroundColor: 'var(--bauhaus-yellow)' }}></div>
+          <div style={{ width:'5px', height: '60px', backgroundColor: 'var(--bauhaus-yellow)' }}></div>
         </div>
-        </div>
+      </div>
     ),
   },
 };
@@ -105,26 +95,20 @@ export const Hoverable = {
     hoverable: true,
     children: (
       <div>
-        <div style={{ padding: '0 16px', display: 'block', alignItems: 'center' }}>
+        <div style={{ padding: '16px' }}>
           <div style={{ width:'5px', height: '20px', backgroundColor: 'var(--bauhaus-blue)' }}></div>
-          <h3 style={{ marginBottom: '8px' }}>Card Interactiva</h3>
-        </div>
-        <div style={{ width:'80%', height: '3px', backgroundColor: 'var(--bauhaus-red)' }}></div>
-        <div style={{ paddingRight: '16px', display: 'flex', flexDirection: 'row', alignItems: 'end' }}>
-          <div style={{ padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: '16px' }}>
-            <p style={{ color: '#757575' }}>
-               Pasa el mouse por encima para ver el efecto hover.
-            </p>
-            <Button variant="default">Button</Button>
-          </div>
-        <div style={{ width:'5px', height: '80px', backgroundColor: 'var(--bauhaus-yellow)' }}></div>
+          <h3 style={{ marginBottom: '8px' }}>Interactive Card</h3>
+          <div style={{ width:'80%', height: '3px', backgroundColor: 'var(--bauhaus-red)', margin: '8px 0' }}></div>
+          <p style={{ color: '#757575' }}>
+            Hover over this card to see the effect.
+          </p>
         </div>
       </div>
     ),
   },
 };
 
-// Grid de Cards
+// Card grid
 export const CardGrid = () => (
   <div
     style={{
@@ -134,50 +118,29 @@ export const CardGrid = () => (
     }}
   >
     <Card shadow hoverable>
-      <div style={{ padding: '8px', display: 'block', alignItems: 'center' }}>
-          
-          <h3 style={{ marginBottom: '8px' }}>Card 1</h3>
-        </div>
-        <div style={{ width:'80%', height: '3px', backgroundColor: 'var(--bauhaus-red)' }}></div>
-        <div style={{ paddingRight: '16px', display: 'flex', flexDirection: 'row', alignItems: 'end' }}>
-          <div style={{ padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: '16px' }}>
-            <p style={{ color: '#757575' }}>
-               Contenido de la primera tarjeta
-            </p>
-          </div>
-        <div style={{ width:'5px', height: '80px', backgroundColor: 'var(--bauhaus-yellow)' }}></div>
+      <div style={{ padding: '8px' }}>
+        <h3>Card 1</h3>
+        <div style={{ width:'60%', height: '3px', backgroundColor: 'var(--bauhaus-red)', margin: '8px 0' }}></div>
+        <p style={{ color: '#757575' }}>First card content</p>
       </div>
     </Card>
+    
     <Card shadow hoverable>
-      <div style={{ padding: '0 16px', display: 'block', alignItems: 'center' }}>
-          <div style={{ width:'5px', height: '20px', backgroundColor: 'var(--bauhaus-blue)' }}></div>
-          <h3 style={{ marginBottom: '8px' }}>Card 2</h3>
-        </div>
-        <div style={{ width:'80%', height: '3px', backgroundColor: 'var(--bauhaus-red)' }}></div>
-        <div style={{ paddingRight: '16px', display: 'flex', flexDirection: 'row', alignItems: 'end' }}>
-          <div style={{ padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: '16px' }}>
-            <p style={{ color: '#757575' }}>
-               Contenido de la segunda tarjeta
-            </p>
-          </div>
-        <div style={{ width:'5px', height: '80px', backgroundColor: 'var(--bauhaus-yellow)' }}></div>
+      <div style={{ padding: '8px' }}>
+        <div style={{ width:'5px', height: '15px', backgroundColor: 'var(--bauhaus-blue)' }}></div>
+        <h3>Card 2</h3>
+        <div style={{ width:'60%', height: '3px', backgroundColor: 'var(--bauhaus-red)', margin: '8px 0' }}></div>
+        <p style={{ color: '#757575' }}>Second card content</p>
       </div>
     </Card>
+    
     <Card shadow hoverable>
-      <div style={{ padding: '0 16px', display: 'block', alignItems: 'center' }}>
-          <div style={{ width:'5px', height: '20px', backgroundColor: 'var(--bauhaus-blue)' }}></div>
-          <h3 style={{ marginBottom: '8px' }}>Card 3</h3>
-        </div>
-        <div style={{ width:'80%', height: '3px', backgroundColor: 'var(--bauhaus-red)' }}></div>
-        <div style={{ paddingRight: '16px', display: 'flex', flexDirection: 'row', alignItems: 'end' }}>
-          <div style={{ padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: '16px' }}>
-            <p style={{ color: '#757575' }}>
-               Contenido de la tercera tarjeta
-            </p>
-          </div>
-        <div style={{ width:'5px', height: '80px', backgroundColor: 'var(--bauhaus-yellow)' }}></div>
+      <div style={{ padding: '8px' }}>
+        <div style={{ width:'5px', height: '15px', backgroundColor: 'var(--bauhaus-blue)' }}></div>
+        <h3>Card 3</h3>
+        <div style={{ width:'60%', height: '3px', backgroundColor: 'var(--bauhaus-red)', margin: '8px 0' }}></div>
+        <p style={{ color: '#757575' }}>Third card content</p>
       </div>
     </Card>
   </div>
 );
-
