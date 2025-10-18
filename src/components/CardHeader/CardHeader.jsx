@@ -10,6 +10,7 @@ import { Button } from '../Button/Button';
  * @param {Object} props - Component properties
  * @param {string} props.header - Header text
  * @param {React.ReactNode} props.children - Main content
+ * @param {string} props.image - Image URL to display in header
  * @param {Object} props.button - Button configuration
  * @param {string} props.button.text - Button text
  * @param {string} props.button.variant - Button variant: 'solid', 'outline', 'text'
@@ -19,14 +20,20 @@ import { Button } from '../Button/Button';
 export const CardHeader = ({
   header,
   children,
+  image,
   button,
   ...props
 }) => {
   return (
     <div className={styles.container} {...props}>
-      {/* Header section with blue accent */}
+      {/* Header section with optional blue accent or image */}
       <div className={styles.header}>
-        <div className={styles.blueAccent}></div>
+        {!image && <div className={styles.blueAccent}></div>}
+        {image && (
+          <div className={styles.imageWrapper}>
+            <img src={image} alt={header} className={styles.headerImage} />
+          </div>
+        )}
         <h3 className={styles.title}>{header}</h3>
       </div>
 

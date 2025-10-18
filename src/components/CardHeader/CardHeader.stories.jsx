@@ -17,6 +17,10 @@ export default {
       control: 'text',
       description: 'Main content',
     },
+    image: {
+      control: 'text',
+      description: 'Image URL to display in header (replaces blue accent)',
+    },
     button: {
       control: 'object',
       description: 'Button configuration',
@@ -89,6 +93,24 @@ export const RichContent = {
       text: 'Add to Cart',
       variant: 'solid',
       color: 'green',
+    },
+  },
+};
+
+// With image
+export const WithImage = {
+  args: {
+    header: 'Card with Image',
+    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&h=200&fit=crop',
+    children: (
+      <p style={{ color: '#757575' }}>
+        When an image is provided, the blue accent is not displayed.
+      </p>
+    ),
+    button: {
+      text: 'View Details',
+      variant: 'solid',
+      color: 'blue',
     },
   },
 };

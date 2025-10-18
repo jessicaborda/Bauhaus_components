@@ -23,6 +23,21 @@
   background-color: var(--bauhaus-blue);
 }
 
+.imageWrapper {
+  width: calc(100% + 32px);
+  margin-left: -16px;
+  margin-right: -16px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.headerImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
 .title {
   margin-bottom: 8px;
   margin-top: 4px;
