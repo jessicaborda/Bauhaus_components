@@ -35,3 +35,20 @@ button:disabled {
   outline-offset: 2px;
 }
 
+/* Typography - Headings */
+h1,
+h2,
+h3 {
+  font-family: var(--font-family-roboto);
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-inter);
+  font-optical-sizing: auto;
+  font-style: normal;
+}
