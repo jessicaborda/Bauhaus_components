@@ -13,6 +13,15 @@ export default {
   framework: {
     name: '@storybook/react-vite',
     options: {},
+  },
+
+  // GitHub Pages configuration
+  viteFinal: async (config) => {
+    // Set base path for GitHub Pages deployment
+    if (process.env.NODE_ENV === 'production') {
+      config.base = '/Bauhaus_components/';
+    }
+    return config;
   }
 };
 
