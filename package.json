@@ -10,7 +10,7 @@
       "import": "./dist/bauhaus-ui.js",
       "require": "./dist/bauhaus-ui.umd.cjs"
     },
-    "./styles": "./dist/style.css"
+    "./styles": "./dist/bauhaus-ui.css"
   },
   "files": [
     "dist",

@@ -17,14 +17,14 @@ A minimalist React component library inspired by the Bauhaus design school. Clea
 ## Installation
 
 ```bash
-npm install bauhaus-ui
+npm install @ars-design/bauhaus-ui
 ```
 
 ## Quick Start
 
 ```jsx
-import { Button, Card, RowCard } from 'bauhaus-ui';
-import 'bauhaus-ui/styles';
+import { Button, Card, RowCard } from '@ars-design/bauhaus-ui';
+import '@ars-design/bauhaus-ui/styles';
 
 function App() {
   return (
