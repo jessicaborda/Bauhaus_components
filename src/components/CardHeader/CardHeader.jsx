@@ -24,6 +24,8 @@ export const CardHeader = ({
   media,
   mediaType,
   button,
+  className = '',
+  style,
   ...props
 }) => {
   // Check if media is a string (URL) or a React element
@@ -32,7 +34,7 @@ export const CardHeader = ({
   // Lateral layout: image on the left, content on the right
   if (mediaType === 'lateral') {
     return (
-      <div className={styles.container} {...props}>
+      <div className={`${styles.container} ${className}`} style={style} {...props}>
         <div className={styles.lateralLayout}>
           {/* Lateral image */}
           {media && (
@@ -44,7 +46,7 @@ export const CardHeader = ({
               )}
             </div>
           )}
-          
+
           {/* Content side */}
           <div className={styles.lateralContent}>
             {/* Header section */}
@@ -83,7 +85,7 @@ export const CardHeader = ({
 
   // Default layout: banner or icon
   return (
-    <div className={styles.container} {...props}>
+    <div className={`${styles.container} ${className}`} style={style} {...props}>
       {/* Header section with optional blue accent, icon, or banner */}
       <div className={styles.header}>
         {!media && <div className={styles.blueAccent}></div>}

@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2] - 2025-12-08
+
+### Changed
+
+#### CardHeader Component Enhanced
+
+- Added `className` and `style` props for custom styling
+- Added `width: 100%`, `max-width: 100%`, and `box-sizing: border-box` for better layout control
+
+#### RowCard Component Enhanced
+
+- Added `className` and `style` props for custom styling
+- Added `width: 100%`, `max-width: 100%`, and `box-sizing: border-box` for better responsiveness
+
 ### Removed
 
 #### Badge Component Removed (Breaking Change)

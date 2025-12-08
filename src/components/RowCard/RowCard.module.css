@@ -5,9 +5,15 @@
 .rowcard {
   /* Base styles - Bauhaus always has visible border, no padding */
   display: block;
+  width: 100%;
+  /* Default to full width of parent */
+  max-width: 100%;
+  /* Respect parent container width */
   background-color: var(--bauhaus-white);
   border: 8px solid var(--bauhaus-black);
   transition: all var(--transition-normal);
+  box-sizing: border-box;
+  /* Include border in width calculation */
 }
 
 /* ===== MODIFIERS ===== */
