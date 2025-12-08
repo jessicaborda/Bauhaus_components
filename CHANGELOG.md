@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2] - 2025-12-08
+
+### Fixed
+
+- CardHeader component styling improvements
+- Component layout and spacing refinements
+
+### Changed
+
+- Updated typography variables and color system
+- Improved component responsiveness
+
 ### Removed
 
 #### Badge Component Removed (Breaking Change)
@@ -17,9 +29,7 @@ The Badge component has been removed as it doesn't align with pure Bauhaus desig
 - Remove any `Badge` imports and usage from your code
 - Consider using custom implementations if needed
 
-### Changed
-
-#### Button Component Refactored (Breaking Change)
+### Button Component Refactored (Breaking Change)
 
 The Button component has been redesigned with a more flexible and maintainable architecture.
 
@@ -59,7 +69,7 @@ The Button component has been redesigned with a more flexible and maintainable a
 - Follows industry standards (Material UI, Chakra UI pattern)
 - Better CSS custom properties usage
 
-#### Card Components Simplified
+### Card Components Simplified
 
 Card and RowCard components have been streamlined:
 - Removed unused `padding` prop (use CSS for custom padding)
@@ -73,8 +83,9 @@ Card and RowCard components have been streamlined:
 - Professional English documentation
 - `CONTRIBUTING.md` guide for developers
 - `CHANGELOG.md` for version tracking
+- GitHub Actions workflow for deployment
 
-### Fixed
+### Fixed (from initial release)
 
 - Button variant naming inconsistency between stories and component
 - Missing RowCard export in `src/index.js`

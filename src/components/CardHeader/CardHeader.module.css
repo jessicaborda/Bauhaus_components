@@ -6,9 +6,15 @@
   /* Bauhaus thick border */
   display: flex;
   flex-direction: column;
+  width: 100%;
+  /* Default to full width of parent */
+  max-width: 100%;
+  /* Respect parent container width */
   background-color: var(--bauhaus-white);
   border: 8px solid var(--bauhaus-black);
   position: relative;
+  box-sizing: border-box;
+  /* Include border in width calculation */
 }
 
 /* ===== HEADER SECTION ===== */
@@ -122,4 +128,3 @@
   display: flex;
   flex-direction: column;
 }
-
