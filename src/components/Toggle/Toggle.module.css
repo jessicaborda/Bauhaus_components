@@ -1,0 +1,142 @@
+/**
+ * Toggle Component Styles
+ * BEM Methodology: bh-toggle, bh-toggle__element, bh-toggle--modifier
+ */
+
+/* ===== WRAPPER ===== */
+.bh-toggle {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--bh-space-sm);
+	cursor: pointer;
+}
+
+/* ===== HIDDEN INPUT ===== */
+.bh-toggle__input {
+	/* Visually hide the native checkbox but keep it accessible */
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+/* ===== SWITCH TRACK ===== */
+.bh-toggle__switch {
+	display: inline-block;
+	position: relative;
+	width: 44px;
+	height: 24px;
+	border: var(--bh-border-width-thick) solid var(--bauhaus-black);
+	background: var(--bauhaus-gray-100);
+	transition: background var(--bh-transition-fast);
+}
+
+/* ===== KNOB ===== */
+.bh-toggle__knob {
+	position: absolute;
+	top: 50%;
+	left: 3px;
+	width: 16px;
+	height: 16px;
+	background: var(--bauhaus-blue);
+	transform: translateY(-50%);
+	transition: transform var(--bh-transition-fast);
+}
+
+/* Checked state - yellow background, knob moves right */
+.bh-toggle__input:checked + .bh-toggle__switch {
+	background: var(--bauhaus-yellow);
+}
+
+.bh-toggle__input:checked + .bh-toggle__switch .bh-toggle__knob {
+	transform: translate(20px, -50%);
+}
+
+/* ===== LABEL ===== */
+.bh-toggle__label {
+	font-size: var(--bh-font-size-sm);
+	color: var(--bauhaus-black);
+}
+
+/* ===== DISABLED STATE ===== */
+.bh-toggle--disabled {
+	cursor: not-allowed;
+	opacity: 0.5;
+}
+
+.bh-toggle--disabled .bh-toggle__switch {
+	border-color: var(--bauhaus-gray-300);
+}
+
+.bh-toggle--disabled .bh-toggle__knob {
+	background: var(--bauhaus-gray-400);
+}
+
+/* ===== SIZE VARIANTS ===== */
+
+/* Small */
+.bh-toggle--small .bh-toggle__switch {
+	width: 36px;
+	height: 20px;
+}
+
+.bh-toggle--small .bh-toggle__knob {
+	width: 12px;
+	height: 12px;
+}
+
+.bh-toggle--small
+	.bh-toggle__input:checked
+	+ .bh-toggle__switch
+	.bh-toggle__knob {
+	transform: translate(16px, -50%);
+}
+
+.bh-toggle--small .bh-toggle__label {
+	font-size: var(--bh-font-size-xs);
+}
+
+/* Medium (default) */
+.bh-toggle--medium .bh-toggle__switch {
+	width: 44px;
+	height: 24px;
+}
+
+.bh-toggle--medium .bh-toggle__knob {
+	width: 16px;
+	height: 16px;
+}
+
+.bh-toggle--medium
+	.bh-toggle__input:checked
+	+ .bh-toggle__switch
+	.bh-toggle__knob {
+	transform: translate(20px, -50%);
+}
+
+.bh-toggle--medium .bh-toggle__label {
+	font-size: var(--bh-font-size-sm);
+}
+
+/* Large */
+.bh-toggle--large .bh-toggle__switch {
+	width: 52px;
+	height: 28px;
+}
+
+.bh-toggle--large .bh-toggle__knob {
+	width: 20px;
+	height: 20px;
+}
+
+.bh-toggle--large
+	.bh-toggle__input:checked
+	+ .bh-toggle__switch
+	.bh-toggle__knob {
+	transform: translate(24px, -50%);
+}
+
+.bh-toggle--large .bh-toggle__label {
+	font-size: var(--bh-font-size-md);
+}

@@ -1,0 +1,80 @@
+/**
+ * Input Component Styles
+ * BEM Methodology: bh-input, bh-input__element, bh-input--modifier
+ */
+
+/* ===== WRAPPER ===== */
+.bh-input {
+	display: flex;
+	flex-direction: column;
+	gap: var(--bh-space-xs);
+}
+
+/* ===== LABEL ===== */
+.bh-input__label {
+	font-size: var(--bh-font-size-sm);
+	font-weight: var(--bh-font-weight-medium);
+	color: var(--bauhaus-black);
+}
+
+/* ===== INPUT FIELD ===== */
+.bh-input__field {
+	padding: var(--bh-space-sm) var(--bh-space-md);
+	border: none;
+	border-bottom: var(--bh-border-width-thick) solid var(--bauhaus-gray-300);
+	font-family: var(--bh-font-family);
+	font-size: var(--bh-font-size-sm);
+	background-color: transparent;
+	outline: none;
+	transition: border-color var(--bh-transition-fast);
+}
+
+.bh-input__field::placeholder {
+	color: var(--bauhaus-gray-400);
+}
+
+.bh-input__field:focus {
+	border-bottom-color: var(--bauhaus-yellow);
+}
+
+/* ===== SIZE VARIANTS ===== */
+.bh-input__field--small {
+	padding: var(--bh-space-xs) var(--bh-space-sm);
+	font-size: var(--bh-font-size-xs);
+}
+
+.bh-input__field--medium {
+	padding: var(--bh-space-sm) var(--bh-space-md);
+	font-size: var(--bh-font-size-sm);
+}
+
+.bh-input__field--large {
+	padding: var(--bh-space-md) var(--bh-space-lg);
+	font-size: var(--bh-font-size-md);
+}
+
+/* ===== MODIFIERS ===== */
+.bh-input--full-width {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.bh-input__field--disabled {
+	background-color: var(--bauhaus-gray-100);
+	color: var(--bauhaus-gray-400);
+	cursor: not-allowed;
+}
+
+.bh-input__field--error {
+	border-bottom-color: var(--bauhaus-red);
+}
+
+.bh-input__field--error:focus {
+	border-bottom-color: var(--bauhaus-red-700);
+}
+
+/* ===== ERROR MESSAGE ===== */
+.bh-input__error {
+	color: var(--bauhaus-red-700);
+	font-size: var(--bh-font-size-xs);
+}

@@ -1,0 +1,191 @@
+/**
+ * Button Component Styles (Refactored)
+ *
+ * Arquitectura moderna usando CSS custom properties para colores dinámicos.
+ * Reducido de 253 líneas a ~100 líneas manteniendo todas las funcionalidades.
+ *
+ * Uso:
+ * - variant: solid, outline, text
+ * - color: blue, red, yellow, green, orange, purple
+ * - size: small, medium, large
+ */
+
+/* ===== BASE STYLES ===== */
+
+.button {
+	/* Layout */
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--bh-space-sm);
+
+	/* Border - Bauhaus style with thick solid borders */
+	border: var(--bh-btn-border-width) solid var(--bauhaus-black);
+	border-radius: 0; /* Sharp corners for Bauhaus aesthetic */
+
+	/* Typography */
+	font-family: var(--bh-font-family);
+	font-weight: var(--bh-font-weight-medium);
+
+	/* Transitions */
+	transition: all var(--bh-transition-fast);
+
+	/* Reset browser defaults */
+	background: none;
+	cursor: pointer;
+	user-select: none;
+
+	/* Custom properties for dynamic colors - se sobrescriben por clase */
+	--bh-btn-bg: transparent;
+	--bh-btn-bg-hover: transparent;
+	--bh-btn-bg-active: transparent;
+	--bh-btn-color: var(--bauhaus-black);
+	--bh-btn-border: var(--bauhaus-black);
+}
+
+.button:hover:not(:disabled) {
+	/* Bauhaus 3D effect - asymmetric border creates shadow illusion */
+	border-width: 1px var(--bh-btn-border-width) var(--bh-btn-border-width) 1px;
+}
+
+.button:active:not(:disabled) {
+	/* Press down effect */
+	transform: translateY(1px);
+}
+
+.button:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+/* ===== COLOR VARIANTS ===== */
+
+/* Blue */
+.color-blue {
+	--bh-btn-main: var(--bauhaus-blue);
+	--bh-btn-main-700: var(--bauhaus-blue-700);
+	--bh-btn-main-900: var(--bauhaus-blue-900);
+}
+
+/* Red */
+.color-red {
+	--bh-btn-main: var(--bauhaus-red);
+	--bh-btn-main-700: var(--bauhaus-red-700);
+	--bh-btn-main-900: var(--bauhaus-red-900);
+}
+
+/* Yellow */
+.color-yellow {
+	--bh-btn-main: var(--bauhaus-yellow);
+	--bh-btn-main-700: var(--bauhaus-yellow-700);
+	--bh-btn-main-900: var(--bauhaus-yellow-900);
+}
+
+/* Green */
+.color-green {
+	--bh-btn-main: var(--bauhaus-green);
+	--bh-btn-main-700: var(--bauhaus-green-700);
+	--bh-btn-main-900: var(--bauhaus-green-900);
+}
+
+/* Orange */
+.color-orange {
+	--bh-btn-main: var(--bauhaus-orange);
+	--bh-btn-main-700: var(--bauhaus-orange-700);
+	--bh-btn-main-900: var(--bauhaus-orange-900);
+}
+
+/* Purple */
+.color-purple {
+	--bh-btn-main: var(--bauhaus-purple);
+	--bh-btn-main-700: var(--bauhaus-purple-700);
+	--bh-btn-main-900: var(--bauhaus-purple-900);
+}
+
+/* ===== VARIANT STYLES ===== */
+
+/* Solid - Fondo de color, texto blanco (excepto yellow) */
+.solid {
+	background-color: var(--bh-btn-main);
+	color: var(--bauhaus-white);
+	border-color: var(--bauhaus-black);
+}
+
+.solid.color-yellow {
+	color: var(--bauhaus-black); /* Yellow needs dark text for contrast */
+}
+
+.solid:hover:not(:disabled) {
+	background-color: var(--bh-btn-main-700);
+	border-color: var(--bauhaus-black);
+}
+
+.solid:active:not(:disabled) {
+	background-color: var(--bh-btn-main-900);
+}
+
+/* Outline - Fondo transparente, borde de color */
+.outline {
+	background-color: transparent;
+	color: var(--bh-btn-main-700);
+	border-color: var(--bh-btn-main);
+}
+
+.outline:hover:not(:disabled) {
+	background-color: var(--bh-btn-main);
+	color: var(--bauhaus-white);
+	border-color: var(--bauhaus-black);
+}
+
+.outline.color-yellow:hover:not(:disabled) {
+	color: var(--bauhaus-black);
+}
+
+.outline:active:not(:disabled) {
+	background-color: var(--bh-btn-main-700);
+	border-color: var(--bauhaus-black);
+}
+
+/* Text - Solo texto con underline, sin fondo */
+.text {
+	background-color: transparent;
+	color: var(--bh-btn-main-700);
+	border: none;
+	border-bottom: var(--bh-btn-border-width) solid var(--bh-btn-main);
+}
+
+.text:hover:not(:disabled) {
+	border: var(--bh-btn-border-width) solid var(--bh-btn-main);
+}
+
+.text:active:not(:disabled) {
+	border-width: 1px var(--bh-btn-border-width) var(--bh-btn-border-width) 1px;
+	border-style: solid;
+	border-color: var(--bh-btn-main);
+}
+
+/* ===== SIZE VARIANTS ===== */
+
+.small {
+	padding: var(--bh-space-xs) var(--bh-space-md);
+	font-size: var(--bh-font-size-sm);
+	min-height: 32px;
+}
+
+.medium {
+	padding: var(--bh-space-sm) var(--bh-space-lg);
+	font-size: var(--bh-font-size-md);
+	min-height: 40px;
+}
+
+.large {
+	padding: var(--bh-space-md) var(--bh-space-xl);
+	font-size: var(--bh-font-size-lg);
+	min-height: 48px;
+}
+
+/* ===== MODIFIERS ===== */
+
+.fullWidth {
+	width: 100%;
+}

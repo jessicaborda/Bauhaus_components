@@ -1,0 +1,117 @@
+/**
+ * Checkbox Component Styles
+ * BEM Methodology: bh-checkbox, bh-checkbox__element, bh-checkbox--modifier
+ */
+
+/* ===== WRAPPER ===== */
+.bh-checkbox {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--bh-space-sm);
+	cursor: pointer;
+}
+
+/* ===== HIDDEN INPUT ===== */
+.bh-checkbox__input {
+	/* visually hide native checkbox but keep it accessible */
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+/* ===== VISUAL BOX ===== */
+.bh-checkbox__box {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border: var(--bh-border-width-thick) solid var(--bauhaus-black);
+	background: var(--bauhaus-gray-100);
+	box-sizing: border-box;
+	position: relative;
+	transition:
+		background var(--bh-transition-fast),
+		border-color var(--bh-transition-fast);
+}
+
+/* Checked state - yellow background */
+.bh-checkbox__input:checked + .bh-checkbox__box {
+	background: var(--bauhaus-yellow);
+}
+
+/* Diamond inside when checked */
+.bh-checkbox__input:checked + .bh-checkbox__box::after {
+	content: "";
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	background: var(--bauhaus-blue);
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%) rotate(45deg);
+	box-sizing: border-box;
+}
+
+/* Hover state (unchecked) - show blue square preview */
+.bh-checkbox:not(.bh-checkbox--disabled) .bh-checkbox__input:not(:checked):hover
+	+ .bh-checkbox__box::after,
+.bh-checkbox:not(.bh-checkbox--disabled)
+	.bh-checkbox__input:not(:checked):focus
+	+ .bh-checkbox__box::after {
+	content: "";
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	background: var(--bauhaus-blue);
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 0.5;
+	box-sizing: border-box;
+}
+
+/* ===== LABEL ===== */
+.bh-checkbox__label {
+	font-size: var(--bh-font-size-sm);
+	color: var(--bauhaus-black);
+}
+
+/* ===== DISABLED STATE ===== */
+.bh-checkbox--disabled {
+	cursor: not-allowed;
+	opacity: 0.5;
+}
+
+.bh-checkbox--disabled .bh-checkbox__box {
+	border-color: var(--bauhaus-gray-300);
+	background: var(--bauhaus-gray-100);
+}
+
+/* ===== SIZE VARIANTS ===== */
+.bh-checkbox--small .bh-checkbox__box {
+	width: 16px;
+	height: 16px;
+}
+
+.bh-checkbox--small .bh-checkbox__label {
+	font-size: var(--bh-font-size-xs);
+}
+
+.bh-checkbox--medium .bh-checkbox__box {
+	width: 20px;
+	height: 20px;
+}
+
+.bh-checkbox--medium .bh-checkbox__label {
+	font-size: var(--bh-font-size-sm);
+}
+
+.bh-checkbox--large .bh-checkbox__box {
+	width: 24px;
+	height: 24px;
+}
+
+.bh-checkbox--large .bh-checkbox__label {
+	font-size: var(--bh-font-size-md);
+}
