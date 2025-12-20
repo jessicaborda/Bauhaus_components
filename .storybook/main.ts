@@ -7,10 +7,14 @@ import type { StorybookConfig } from "@storybook/react-vite";
  * - Where to find stories (*.stories.tsx files)
  * - Which addons to use
  * - The framework (React with Vite)
+ * - Static directories to copy to the build output
  */
 const config: StorybookConfig = {
 	stories: ["../src/**/*.stories.@(ts|tsx)"],
 	addons: ["@storybook/addon-links", "@storybook/addon-docs"],
+
+	// Static directories to include in the build
+	staticDirs: ["../assets"],
 
 	framework: {
 		name: "@storybook/react-vite",
