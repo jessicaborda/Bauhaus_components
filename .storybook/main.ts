@@ -14,7 +14,8 @@ const config: StorybookConfig = {
 	addons: ["@storybook/addon-links", "@storybook/addon-docs"],
 
 	// Static directories to include in the build
-	staticDirs: ["../assets"],
+	// Use object notation to preserve the 'assets' folder structure in the build output
+	staticDirs: [{ from: "../assets", to: "/assets" }],
 
 	framework: {
 		name: "@storybook/react-vite",
