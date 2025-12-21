@@ -182,6 +182,7 @@ Card with vertical rotated title, colored accents, and integrated button.
 | `buttonText` | `string` | `'Action'` | Button text |
 | `buttonColor` | `Color` | `'blue'` | Button color |
 | `onButtonClick` | `() => void` | - | Button click handler |
+| `buttonFill` | `boolean` | `false` | Full width button |
 | `minHeight` | `string \| number` | `'300px'` | Minimum height |
 | `minWidth` | `string \| number` | `'400px'` | Minimum width |
 
@@ -213,19 +214,75 @@ Card with image on left, content on right, and yellow tail accent.
 | `buttonText` | `string` | `'Action'` | Button text |
 | `buttonColor` | `Color` | `'blue'` | Button color |
 | `onButtonClick` | `() => void` | - | Button click handler |
+| `buttonFill` | `boolean` | `false` | Full width button |
+| `minHeight` | `string \| number` | `'300px'` | Minimum height |
+| `minWidth` | `string \| number` | `'500px'` | Minimum width |
+
+---
+
+### VerticalImageCard
+
+Card with image on top, content below, and yellow tail accent.
+
+```tsx
+<VerticalImageCard
+  imageSrc="/path/to/image.jpg"
+  title="Card Title"
+  subtitle="Subtitle text"
+  buttonText="Action"
+  onButtonClick={() => console.log('Clicked!')}
+  imageHeight="40%"
+/>
+```
+
+**Props:**
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `imageSrc` | `string` | **required** | Image URL |
+| `title` | `string` | - | Card title |
+| `subtitle` | `string` | - | Card subtitle |
+| `imageAlt` | `string` | `''` | Image alt text |
+| `imageHeight` | `string \| number` | `'40%'` | Image height |
+| `tail` | `boolean` | `true` | Show yellow tail accent |
+| `buttonVariant` | `'solid' \| 'outline' \| 'text' \| 'none'` | `'solid'` | Button style |
+| `buttonText` | `string` | `'Action'` | Button text |
+| `buttonColor` | `Color` | `'blue'` | Button color |
+| `onButtonClick` | `() => void` | - | Button click handler |
+| `buttonFill` | `boolean` | `false` | Full width button |
+| `minHeight` | `string \| number` | `'400px'` | Minimum height |
+| `minWidth` | `string \| number` | `'300px'` | Minimum width |
 
 ---
 
 ### Card
 
-Basic container component with Bauhaus-style borders.
+Card with Bauhaus-style accents: top blue accent, red divider, optional subtitle/children and optional tail.
 
 ```tsx
-<Card shadow hoverable onClick={() => console.log('Clicked!')}>
-  <h3>Card Title</h3>
-  <p>Content</p>
+<Card
+  title="Card Title"
+  subtitle="Subtitle text"
+  buttonText="Action"
+  onButtonClick={() => console.log('Clicked!')}
+>
+  <p>Optional extra content (children)</p>
 </Card>
 ```
+
+**Props:**
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `title` | `string` | - | Card title |
+| `subtitle` | `string` | - | Card subtitle |
+| `children` | `ReactNode` | - | Optional extra content |
+| `tail` | `boolean` | `true` | Show yellow tail accent |
+| `buttonVariant` | `'solid' \| 'outline' \| 'text' \| 'none'` | `'solid'` | Button style |
+| `buttonText` | `string` | `'Action'` | Button text |
+| `buttonColor` | `Color` | `'blue'` | Button color |
+| `onButtonClick` | `() => void` | - | Button click handler |
+| `buttonFill` | `boolean` | `false` | Full width button |
+| `minHeight` | `string \| number` | `'300px'` | Minimum height |
+| `minWidth` | `string \| number` | `'400px'` | Minimum width |
 
 ---
 
@@ -243,7 +300,7 @@ All variables use the `--bh-` prefix to avoid collisions with your project:
 --bauhaus-green: #06A77D
 --bauhaus-orange: #FF6B35
 --bauhaus-purple: #7209B7
---bauhaus-black: #1A1A1A
+--bauhaus-black: #000000
 --bauhaus-white: #FFFFFF
 ```
 
@@ -334,6 +391,7 @@ bauhaus-ui/
 │   │   ├── Dropdown/
 │   │   ├── VerticalTitleCard/
 │   │   ├── HorizontalImageCard/
+│   │   ├── VerticalImageCard/
 │   │   ├── Card/
 │   │   └── Toggle/
 │   ├── styles/

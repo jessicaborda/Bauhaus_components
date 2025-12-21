@@ -3,26 +3,58 @@ import { VerticalTitleCard } from "./VerticalTitleCard";
 
 /**
  * VerticalTitleCard - Bauhaus-style card with vertical title and colored accents.
+ *
+ * A distinctive card component featuring:
+ * - Vertical rotated title (90deg)
+ * - Blue accent bar
+ * - Red vertical divider (90% height)
+ * - Content area with children
+ * - Action button (right-aligned by default)
+ * - Yellow tail accent (optional)
  */
 const meta: Meta<typeof VerticalTitleCard> = {
-	title: "Components/VerticalTitleCard",
+	title: "Cards/VerticalTitleCard",
 	component: VerticalTitleCard,
 	tags: ["autodocs"],
 	argTypes: {
-		title: { control: "text" },
-		icon: { control: false },
-		tail: { control: "boolean" },
+		title: {
+			control: "text",
+			description: "Card title (displayed vertically)",
+		},
+		icon: {
+			control: false,
+			description: "Optional icon displayed below the accent",
+		},
+		tail: {
+			control: "boolean",
+			description: "Whether to show the tail accent section",
+		},
 		buttonVariant: {
 			control: "select",
 			options: ["solid", "outline", "text", "none"],
+			description: "Button variant",
 		},
-		buttonText: { control: "text" },
+		buttonText: {
+			control: "text",
+			description: "Button text",
+		},
 		buttonColor: {
 			control: "select",
 			options: ["blue", "red", "yellow", "green", "orange", "purple"],
+			description: "Button color",
 		},
-		minHeight: { control: "text" },
-		minWidth: { control: "text" },
+		buttonFill: {
+			control: "boolean",
+			description: "Whether button fills the full width",
+		},
+		minHeight: {
+			control: "text",
+			description: "Minimum height of the card",
+		},
+		minWidth: {
+			control: "text",
+			description: "Minimum width of the card",
+		},
 	},
 };
 
@@ -55,9 +87,10 @@ export const Variants: Story = {
 		>
 			<VerticalTitleCard
 				title="Default"
+				buttonFill
 				onButtonClick={() => alert("Clicked!")}
 			>
-				<p>With button</p>
+				<p>With button fill</p>
 			</VerticalTitleCard>
 
 			<VerticalTitleCard
@@ -252,6 +285,7 @@ export const Playground: Story = {
 		buttonVariant: "solid",
 		buttonText: "Click Me",
 		buttonColor: "blue",
+		buttonFill: false,
 		onButtonClick: () => alert("Button clicked!"),
 		minHeight: "300px",
 		minWidth: "400px",

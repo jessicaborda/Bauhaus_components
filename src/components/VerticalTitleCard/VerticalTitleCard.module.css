@@ -95,10 +95,11 @@
 }
 
 .bh-vertical-title-card__content-action {
-	flex: 1;
+	flex: none;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-end;
+	margin: var(--bh-space-md) 0;
 }
 
 /* ===== TAIL SECTION ===== */

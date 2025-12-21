@@ -1,20 +1,20 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { HorizontalImageCard } from "./HorizontalImageCard";
+import { VerticalImageCard } from "./VerticalImageCard";
 
 /**
- * HorizontalImageCard - Card with image on the left and content on the right.
+ * VerticalImageCard - Card with image at the top and content below.
  *
- * A media-focused card component featuring:
- * - Image section (40% width, left)
+ * A media-focused vertical card featuring:
+ * - Image section (top, full width)
  * - Title with bold typography
  * - Red divider (90% width)
  * - Subtitle area
- * - Action button (right-aligned by default)
- * - Yellow tail accent (optional)
+ * - Action button (left-aligned by default)
+ * - Yellow tail accent (optional, only in content area)
  */
-const meta: Meta<typeof HorizontalImageCard> = {
-	title: "Cards/HorizontalImageCard",
-	component: HorizontalImageCard,
+const meta: Meta<typeof VerticalImageCard> = {
+	title: "Cards/VerticalImageCard",
+	component: VerticalImageCard,
 	tags: ["autodocs"],
 	argTypes: {
 		imageSrc: {
@@ -24,6 +24,10 @@ const meta: Meta<typeof HorizontalImageCard> = {
 		imageAlt: {
 			control: "text",
 			description: "Image alt text",
+		},
+		imageHeight: {
+			control: "text",
+			description: "Image height (e.g., '150px', '40%', '200px')",
 		},
 		title: {
 			control: "text",
@@ -67,7 +71,7 @@ const meta: Meta<typeof HorizontalImageCard> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof HorizontalImageCard>;
+type Story = StoryObj<typeof meta>;
 
 /**
  * Default - Card with all default values
@@ -77,9 +81,9 @@ export const Default: Story = {
 		imageSrc: "assets/img_default.jpg",
 		imageAlt: "Card image",
 		title: "Card Title",
-		subtitle: "Subtitle text here",
-		buttonText: "Learn More",
-		onButtonClick: () => alert("Learn More clicked!"),
+		subtitle: "This is the card subtitle with additional information",
+		buttonText: "Action",
+		onButtonClick: () => alert("Action clicked!"),
 	},
 };
 
@@ -97,23 +101,25 @@ export const Variants: Story = {
 				backgroundColor: "#f0f0f0",
 			}}
 		>
-			<HorizontalImageCard
+			<VerticalImageCard
 				imageSrc="assets/img_default.jpg"
-				title="Outline Button"
-				subtitle="With outline style + fill"
-				buttonVariant="outline"
+				title="Button Fill"
+				subtitle="Full width button variant"
 				buttonFill
-				buttonText="Action"
+				buttonText="Full Width"
 				onButtonClick={() => alert("Clicked!")}
 			/>
 
-			<HorizontalImageCard
+			<VerticalImageCard
 				imageSrc="assets/img_default.jpg"
-				title="No Subtitle"
-				buttonText="Details"
+				title="Outline Button"
+				subtitle="With outline style"
+				buttonVariant="outline"
+				buttonColor="red"
+				buttonText="Learn More"
 			/>
 
-			<HorizontalImageCard
+			<VerticalImageCard
 				imageSrc="assets/img_default.jpg"
 				title="No Tail"
 				subtitle="Without yellow accent"
@@ -123,7 +129,7 @@ export const Variants: Story = {
 				buttonText="View"
 			/>
 
-			<HorizontalImageCard
+			<VerticalImageCard
 				imageSrc="assets/img_default.jpg"
 				title="No Button"
 				subtitle="Information only card"
@@ -148,15 +154,15 @@ export const ButtonColors: Story = {
 		>
 			{(["blue", "red", "yellow", "green", "orange", "purple"] as const).map(
 				(color) => (
-					<HorizontalImageCard
+					<VerticalImageCard
 						key={color}
 						imageSrc="assets/img_default.jpg"
 						title={color.charAt(0).toUpperCase() + color.slice(1)}
-						subtitle={`${color} button`}
+						subtitle={`${color} button color`}
 						buttonColor={color}
 						buttonText={color}
-						minHeight="200px"
-						minWidth="300px"
+						minHeight="320px"
+						minWidth="200px"
 					/>
 				),
 			)}
@@ -180,10 +186,10 @@ export const Responsive: Story = {
 			{/* Small container */}
 			<div>
 				<p style={{ marginBottom: "8px", fontWeight: "bold" }}>
-					Small (400x180)
+					Small (250x350)
 				</p>
-				<div style={{ width: "400px", height: "180px" }}>
-					<HorizontalImageCard
+				<div style={{ width: "250px", height: "350px" }}>
+					<VerticalImageCard
 						imageSrc="assets/img_default.jpg"
 						title="Compact"
 						subtitle="Small card"
@@ -197,13 +203,13 @@ export const Responsive: Story = {
 			{/* Medium container */}
 			<div>
 				<p style={{ marginBottom: "8px", fontWeight: "bold" }}>
-					Medium (500x250)
+					Medium (300x400)
 				</p>
-				<div style={{ width: "500px", height: "250px" }}>
-					<HorizontalImageCard
+				<div style={{ width: "300px", height: "400px" }}>
+					<VerticalImageCard
 						imageSrc="assets/img_default.jpg"
 						title="Standard Size"
-						subtitle="Default dimensions"
+						subtitle="Default dimensions work well"
 						buttonText="Action"
 						minHeight="100%"
 						minWidth="100%"
@@ -214,33 +220,15 @@ export const Responsive: Story = {
 			{/* Large container */}
 			<div>
 				<p style={{ marginBottom: "8px", fontWeight: "bold" }}>
-					Large (700x350)
+					Large (400x500)
 				</p>
-				<div style={{ width: "700px", height: "350px" }}>
-					<HorizontalImageCard
+				<div style={{ width: "400px", height: "500px" }}>
+					<VerticalImageCard
 						imageSrc="assets/img_default.jpg"
 						title="Large Card"
-						subtitle="More space for content"
+						subtitle="More space for content and longer descriptions"
 						buttonText="Explore"
 						buttonColor="red"
-						minHeight="100%"
-						minWidth="100%"
-					/>
-				</div>
-			</div>
-
-			{/* Full width */}
-			<div>
-				<p style={{ marginBottom: "8px", fontWeight: "bold" }}>
-					Full Width (100% x 280px)
-				</p>
-				<div style={{ width: "100%", height: "280px" }}>
-					<HorizontalImageCard
-						imageSrc="assets/img_default.jpg"
-						title="Full Width"
-						subtitle="Stretches to container"
-						buttonText="View All"
-						buttonColor="green"
 						minHeight="100%"
 						minWidth="100%"
 					/>
@@ -257,15 +245,17 @@ export const Playground: Story = {
 	args: {
 		imageSrc: "assets/img_default.jpg",
 		imageAlt: "Playground image",
+		imageHeight: "40%",
 		title: "Playground",
-		subtitle: "Use the controls panel to customize",
+		subtitle: "Use the controls panel to customize this card",
 		tail: true,
 		buttonVariant: "solid",
 		buttonText: "Click Me",
 		buttonColor: "blue",
 		buttonFill: false,
 		onButtonClick: () => alert("Button clicked!"),
-		minHeight: "300px",
-		minWidth: "500px",
+		minHeight: "400px",
+		minWidth: "300px",
 	},
 };
+

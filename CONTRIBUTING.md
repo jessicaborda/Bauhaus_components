@@ -1,5 +1,38 @@
 # Contributing to Bauhaus UI
 
+## Releases (versioning & publishing)
+
+This project uses **Changesets** to manage versions, changelogs, and npm publishing.
+
+### When you make a PR
+
+1. Create your feature branch and commit your code changes.
+2. Add a changeset:
+
+```bash
+npm run changeset
+```
+
+Pick the bump type:
+- **patch**: fixes, styling tweaks, internal refactors, small API additions
+- **minor**: new features/components, backwards compatible
+- **major**: breaking changes
+
+3. Commit the generated `.md` file in `.changeset/` and push your PR.
+
+### What happens after merge to `main`
+
+GitHub Actions will automatically:
+
+1. Open/update a **"Version Packages"** PR (bumps `package.json` version + updates `CHANGELOG.md`)
+2. When that PR is merged, publish to npm and create a GitHub Release/tag
+
+### GitHub repo requirements
+
+To enable publishing, add this secret in GitHub:
+
+- **`NPM_TOKEN`**: an npm access token with publish permission for `@ars-design/bauhaus-ui`
+
 ## Creating a New Component
 
 ### File Structure

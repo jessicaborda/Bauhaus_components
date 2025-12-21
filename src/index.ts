@@ -13,12 +13,8 @@
 export type { ButtonProps } from "./components/Button";
 // Export components
 export { Button } from "./components/Button";
-export type {
-	CardHeaderButtonConfig,
-	CardHeaderMediaType,
-	CardHeaderProps,
-} from "./components/CardHeader";
-export { CardHeader } from "./components/CardHeader";
+export type { CardProps } from "./components/Card";
+export { Card } from "./components/Card";
 export type { CheckboxProps } from "./components/Checkbox";
 export { Checkbox } from "./components/Checkbox";
 export type { DropdownProps } from "./components/Dropdown";
@@ -29,6 +25,8 @@ export type { InputProps } from "./components/Input";
 export { Input } from "./components/Input";
 export type { ToggleProps } from "./components/Toggle";
 export { Toggle } from "./components/Toggle";
+export type { VerticalImageCardProps } from "./components/VerticalImageCard";
+export { VerticalImageCard } from "./components/VerticalImageCard";
 export type { VerticalTitleCardProps } from "./components/VerticalTitleCard";
 export { VerticalTitleCard } from "./components/VerticalTitleCard";
 
