@@ -4,6 +4,17 @@ All notable changes to Bauhaus UI will be documented in this file.
 
 ---
 
+## [0.2.1] - 2025-12-21
+
+### ✅ Maintenance & Consistency
+
+- Added `Card` and `VerticalImageCard` components and aligned card APIs (e.g. `buttonFill`).
+- Removed `CardHeader` component (superseded by the card set).
+- Scoped `global.css` to avoid aggressive resets in consuming applications.
+- Updated Storybook organization (all cards under `Cards/`) and refreshed README examples.
+
+---
+
 ## [0.2.0] - 2024-12-20
 
 ### 🚀 Architecture Refactor

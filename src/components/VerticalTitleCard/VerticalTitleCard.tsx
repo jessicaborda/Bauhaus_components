@@ -22,6 +22,8 @@ export interface VerticalTitleCardProps
 	buttonColor?: Color;
 	/** Button click handler */
 	onButtonClick?: () => void;
+	/** Whether button fills the full width */
+	buttonFill?: boolean;
 	/** Minimum height of the card */
 	minHeight?: string | number;
 	/** Minimum width of the card */
@@ -60,6 +62,7 @@ export const VerticalTitleCard = ({
 	buttonText = "Action",
 	buttonColor = "blue",
 	onButtonClick,
+	buttonFill = false,
 	minHeight = "300px",
 	minWidth = "400px",
 	children,
@@ -105,7 +108,7 @@ export const VerticalTitleCard = ({
 						<Button
 							variant={buttonVariant}
 							color={buttonColor}
-							fullWidth
+							fullWidth={buttonFill}
 							onClick={onButtonClick}
 						>
 							{buttonText}

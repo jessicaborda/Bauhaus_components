@@ -30,6 +30,8 @@ export interface HorizontalImageCardProps
 	buttonColor?: Color;
 	/** Button click handler */
 	onButtonClick?: () => void;
+	/** Whether button fills the full width */
+	buttonFill?: boolean;
 	/** Custom CSS class name */
 	className?: string;
 	/** Custom inline styles */
@@ -65,6 +67,7 @@ export const HorizontalImageCard = ({
 	buttonText = "Action",
 	buttonColor = "blue",
 	onButtonClick,
+	buttonFill = false,
 	className = "",
 	style,
 	...props
@@ -107,7 +110,7 @@ export const HorizontalImageCard = ({
 							<Button
 								variant={buttonVariant}
 								color={buttonColor}
-								fullWidth
+								fullWidth={buttonFill}
 								onClick={onButtonClick}
 							>
 								{buttonText}

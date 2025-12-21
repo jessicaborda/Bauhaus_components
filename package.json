@@ -1,11 +1,14 @@
 {
 	"name": "@ars-design/bauhaus-ui",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"description": "Minimalist React component library inspired by the Bauhaus design school",
 	"type": "module",
 	"main": "./dist/bauhaus-ui.umd.cjs",
 	"module": "./dist/bauhaus-ui.js",
 	"types": "./dist/bauhaus-ui.d.ts",
+	"publishConfig": {
+		"access": "public"
+	},
 	"exports": {
 		".": {
 			"types": "./dist/bauhaus-ui.d.ts",
@@ -25,6 +28,9 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"typecheck": "tsc --noEmit",
+		"changeset": "changeset",
+		"version-packages": "changeset version",
+		"release": "npm run build && changeset publish",
 		"format": "biome format --write .",
 		"lint": "biome lint .",
 		"check": "biome check --write .",
@@ -60,6 +66,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.3.10",
+		"@changesets/cli": "^2.29.8",
 		"@storybook/addon-docs": "^10.1.10",
 		"@storybook/addon-links": "^10.1.10",
 		"@storybook/react-vite": "^10.1.10",
