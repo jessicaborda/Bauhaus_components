@@ -1,7 +1,5 @@
 # Contributing to Bauhaus UI
 
-<<<<<<< HEAD
-=======
 ## Releases (versioning & publishing)
 
 This project uses **Changesets** to manage versions, changelogs, and npm publishing.
@@ -35,7 +33,6 @@ To enable publishing, add this secret in GitHub:
 
 - **`NPM_TOKEN`**: an npm access token with publish permission for `@ars-design/bauhaus-ui`
 
->>>>>>> 5607bdce77c8ee151debddbe2fc1e716f54a3df7
 ## Creating a New Component
 
 ### File Structure

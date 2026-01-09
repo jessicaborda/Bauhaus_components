@@ -1,16 +1,9 @@
 /**
  * Button Component Styles (Refactored)
-<<<<<<< HEAD
- * 
- * Arquitectura moderna usando CSS custom properties para colores dinámicos.
- * Reducido de 253 líneas a ~100 líneas manteniendo todas las funcionalidades.
- * 
-=======
  *
  * Arquitectura moderna usando CSS custom properties para colores dinámicos.
  * Reducido de 253 líneas a ~100 líneas manteniendo todas las funcionalidades.
  *
->>>>>>> 5607bdce77c8ee151debddbe2fc1e716f54a3df7
  * Uso:
  * - variant: solid, outline, text
  * - color: blue, red, yellow, green, orange, purple
@@ -20,51 +13,6 @@
 /* ===== BASE STYLES ===== */
 
 .button {
-<<<<<<< HEAD
-  /* Layout */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-sm);
-  
-  /* Border - Bauhaus style with thick solid borders */
-  border: 3px solid var(--bauhaus-black);
-  border-radius: 0; /* Sharp corners for Bauhaus aesthetic */
-  
-  /* Typography */
-  font-family: var(--font-family);
-  font-weight: var(--font-weight-medium);
-  
-  /* Transitions */
-  transition: all var(--transition-fast);
-  
-  /* Reset browser defaults */
-  background: none;
-  cursor: pointer;
-  user-select: none;
-  
-  /* Custom properties for dynamic colors - se sobrescriben por clase */
-  --btn-bg: transparent;
-  --btn-bg-hover: transparent;
-  --btn-bg-active: transparent;
-  --btn-color: var(--bauhaus-black);
-  --btn-border: var(--bauhaus-black);
-}
-
-.button:hover:not(:disabled) {
-  /* Bauhaus 3D effect - asymmetric border creates shadow illusion */
-  border-width: 1px 3px 3px 1px;
-}
-
-.button:active:not(:disabled) {
-  /* Press down effect */
-  transform: translateY(1px);
-}
-
-.button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-=======
 	/* Layout */
 	display: inline-flex;
 	align-items: center;
@@ -108,111 +56,56 @@
 .button:disabled {
 	opacity: 0.5;
 	cursor: not-allowed;
->>>>>>> 5607bdce77c8ee151debddbe2fc1e716f54a3df7
 }
 
 /* ===== COLOR VARIANTS ===== */
 
 /* Blue */
 .color-blue {
-<<<<<<< HEAD
-  --btn-main: var(--bauhaus-blue);
-  --btn-main-700: var(--bauhaus-blue-700);
-  --btn-main-900: var(--bauhaus-blue-900);
-=======
 	--bh-btn-main: var(--bauhaus-blue);
 	--bh-btn-main-700: var(--bauhaus-blue-700);
 	--bh-btn-main-900: var(--bauhaus-blue-900);
->>>>>>> 5607bdce77c8ee151debddbe2fc1e716f54a3df7
 }
 
 /* Red */
 .color-red {
-<<<<<<< HEAD
-  --btn-main: var(--bauhaus-red);
-  --btn-main-700: var(--bauhaus-red-700);
-  --btn-main-900: var(--bauhaus-red-900);
-=======
 	--bh-btn-main: var(--bauhaus-red);
 	--bh-btn-main-700: var(--bauhaus-red-700);
 	--bh-btn-main-900: var(--bauhaus-red-900);
->>>>>>> 5607bdce77c8ee151debddbe2fc1e716f54a3df7
 }
 
 /* Yellow */
 .color-yellow {
-<<<<<<< HEAD
-  --btn-main: var(--bauhaus-yellow);
-  --btn-main-700: var(--bauhaus-yellow-700);
-  --btn-main-900: var(--bauhaus-yellow-900);
-=======
 	--bh-btn-main: var(--bauhaus-yellow);
 	--bh-btn-main-700: var(--bauhaus-yellow-700);
 	--bh-btn-main-900: var(--bauhaus-yellow-900);
->>>>>>> 5607bdce77c8ee151debddbe2fc1e716f54a3df7
 }
 
 /* Green */
 .color-green {
-<<<<<<< HEAD
-  --btn-main: var(--bauhaus-green);
-  --btn-main-700: var(--bauhaus-green-700);
-  --btn-main-900: var(--bauhaus-green-900);
-=======
 	--bh-btn-main: var(--bauhaus-green);
 	--bh-btn-main-700: var(--bauhaus-green-700);
 	--bh-btn-main-900: var(--bauhaus-green-900);
->>>>>>> 5607bdce77c8ee151debddbe2fc1e716f54a3df7
 }
 
 /* Orange */
 .color-orange {
-<<<<<<< HEAD
-  --btn-main: var(--bauhaus-orange);
-  --btn-main-700: var(--bauhaus-orange-700);
-  --btn-main-900: var(--bauhaus-orange-900);
-=======
 	--bh-btn-main: var(--bauhaus-orange);
 	--bh-btn-main-700: var(--bauhaus-orange-700);
 	--bh-btn-main-900: var(--bauhaus-orange-900);
->>>>>>> 5607bdce77c8ee151debddbe2fc1e716f54a3df7
 }
 
 /* Purple */
 .color-purple {
-<<<<<<< HEAD
-  --btn-main: var(--bauhaus-purple);
-  --btn-main-700: var(--bauhaus-purple-700);
-  --btn-main-900: var(--bauhaus-purple-900);
-=======
 	--bh-btn-main: var(--bauhaus-purple);
 	--bh-btn-main-700: var(--bauhaus-purple-700);
 	--bh-btn-main-900: var(--bauhaus-purple-900);
->>>>>>> 5607bdce77c8ee151debddbe2fc1e716f54a3df7
 }
 
 /* ===== VARIANT STYLES ===== */
 
 /* Solid - Fondo de color, texto blanco (excepto yellow) */
 .solid {
-<<<<<<< HEAD
-  background-color: var(--btn-main);
-  color: var(--bauhaus-white);
-  border-color: var(--bauhaus-black);
-}
-
-.solid.color-yellow {
-  color: var(--bauhaus-black); /* Yellow needs dark text for contrast */
-}
-
-.solid:hover:not(:disabled) {
-  background-color: var(--btn-main-700);
-  border-color: var(--bauhaus-black);
-}
-
-.solid:active:not(:disabled) {
-  background-color: var(--btn-main-900);
-=======
 	background-color: var(--bh-btn-main);
 	color: var(--bauhaus-white);
 	border-color: var(--bauhaus-black);
@@ -229,31 +122,10 @@
 
 .solid:active:not(:disabled) {
 	background-color: var(--bh-btn-main-900);
->>>>>>> 5607bdce77c8ee151debddbe2fc1e716f54a3df7
 }
 
 /* Outline - Fondo transparente, borde de color */
 .outline {
-<<<<<<< HEAD
-  background-color: transparent;
-  color: var(--btn-main-700);
-  border-color: var(--btn-main);
-}
-
-.outline:hover:not(:disabled) {
-  background-color: var(--btn-main);
-  color: var(--bauhaus-white);
-  border-color: var(--bauhaus-black);
-}
-
-.outline.color-yellow:hover:not(:disabled) {
-  color: var(--bauhaus-black);
-}
-
-.outline:active:not(:disabled) {
-  background-color: var(--btn-main-700);
-  border-color: var(--bauhaus-black);
-=======
 	background-color: transparent;
 	color: var(--bh-btn-main-700);
 	border-color: var(--bh-btn-main);
@@ -272,28 +144,10 @@
 .outline:active:not(:disabled) {
 	background-color: var(--bh-btn-main-700);
 	border-color: var(--bauhaus-black);
->>>>>>> 5607bdce77c8ee151debddbe2fc1e716f54a3df7
 }
 
 /* Text - Solo texto con underline, sin fondo */
 .text {
-<<<<<<< HEAD
-  background-color: transparent;
-  color: var(--btn-main-700);
-  border: none;
-  border-bottom: 3px solid var(--btn-main);
-}
-
-.text:hover:not(:disabled) {
-  border: 3px solid var(--btn-main);
-  border-width: 3px;
-}
-
-.text:active:not(:disabled) {
-  border-width: 1px 3px 3px 1px;
-  border-style: solid;
-  border-color: var(--btn-main);
-=======
 	background-color: transparent;
 	color: var(--bh-btn-main-700);
 	border: none;
@@ -308,29 +162,11 @@
 	border-width: 1px var(--bh-btn-border-width) var(--bh-btn-border-width) 1px;
 	border-style: solid;
 	border-color: var(--bh-btn-main);
->>>>>>> 5607bdce77c8ee151debddbe2fc1e716f54a3df7
 }
 
 /* ===== SIZE VARIANTS ===== */
 
 .small {
-<<<<<<< HEAD
-  padding: var(--space-xs) var(--space-md);
-  font-size: var(--font-size-sm);
-  min-height: 32px;
-}
-
-.medium {
-  padding: var(--space-sm) var(--space-lg);
-  font-size: var(--font-size-md);
-  min-height: 40px;
-}
-
-.large {
-  padding: var(--space-md) var(--space-xl);
-  font-size: var(--font-size-lg);
-  min-height: 48px;
-=======
 	padding: var(--bh-space-xs) var(--bh-space-md);
 	font-size: var(--bh-font-size-sm);
 	min-height: 32px;
@@ -346,15 +182,10 @@
 	padding: var(--bh-space-md) var(--bh-space-xl);
 	font-size: var(--bh-font-size-lg);
 	min-height: 48px;
->>>>>>> 5607bdce77c8ee151debddbe2fc1e716f54a3df7
 }
 
 /* ===== MODIFIERS ===== */
 
 .fullWidth {
-<<<<<<< HEAD
-  width: 100%;
-=======
 	width: 100%;
->>>>>>> 5607bdce77c8ee151debddbe2fc1e716f54a3df7
 }

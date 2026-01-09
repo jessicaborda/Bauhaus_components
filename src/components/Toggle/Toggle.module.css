@@ -1,69 +1,3 @@
-<<<<<<< HEAD
-.wrapper {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-}
-
-.input {
-  /* Visually hide the native checkbox but keep it accessible */
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-}
-
-.switch {
-  display: inline-block;
-  position: relative;
-  width: 42px;
-  height: 24px;
-  border: 2px solid var(--bauhaus-black);
-  background: var(--bauhaus-gray-100);
-  transition: background 150ms ease-in-out;
-}
-
-.knob {
-  position: absolute;
-  /* Vertically center with translateY so different heights stay centered */
-  top: 50%;
-  left: 3px;
-  width: 18px;
-  height: 18px;
-  background: var(--bauhaus-blue);
-  transform: translateY(-50%);
-  transition: transform 150ms ease-in-out;
-}
-
-/* When the input (checkbox) is checked, move the knob and change background */
-.input:checked + .switch {
-  background: var(--bauhaus-yellow);
-}
-
-.input:checked + .switch .knob {
-  /* Default checked — positioned so knob stays inside inner area */
-  transform: translate(15px, -50%);
-}
-
-.label {
-  font-size: 0.95rem;
-  color: var(--bauhaus-text, #111);
-}
-
-.disabled {
-  cursor: not-allowed;
-  opacity: 0.6;
-}
-
-.disabled .switch {
-    border: 2px solid var(--bauhaus-gray-200);
-}
-
-.disabled .knob {
-  background: var(--bauhaus-gray-200);
-=======
 /**
  * Toggle Component Styles
  * BEM Methodology: bh-toggle, bh-toggle__element, bh-toggle--modifier
@@ -205,5 +139,4 @@
 
 .bh-toggle--large .bh-toggle__label {
 	font-size: var(--bh-font-size-md);
->>>>>>> 5607bdce77c8ee151debddbe2fc1e716f54a3df7
 }

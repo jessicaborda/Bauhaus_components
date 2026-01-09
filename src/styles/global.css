@@ -1,34 +1,5 @@
 /**
  * Bauhaus UI Global Styles
-<<<<<<< HEAD
- * 
- * Basic reset and base styles for consistency
- */
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: var(--font-family);
-  font-size: var(--font-size-md);
-  line-height: var(--line-height-normal);
-  color: var(--bauhaus-black);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Accessibility improvements */
-button {
-  font-family: Arial, Helvetica, sans-serif;
-  cursor: pointer;
-}
-
-button:disabled {
-  cursor: not-allowed;
-=======
  *
  * Minimal global styles for the library.
  *
@@ -52,34 +23,10 @@ button:disabled {
 
 :where([class*="bh-"] *, [class*="bh-"] *::before, [class*="bh-"] *::after) {
 	box-sizing: inherit;
->>>>>>> 5607bdce77c8ee151debddbe2fc1e716f54a3df7
 }
 
 /* Visible focus for accessibility */
 :focus-visible {
-<<<<<<< HEAD
-  outline: 2px solid var(--bauhaus-blue);
-  outline-offset: 2px;
-}
-
-/* Typography - Headings */
-h1,
-h2,
-h3 {
-  font-family: var(--font-family-roboto);
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
-}
-
-h4,
-h5,
-h6 {
-  font-family: var(--font-family-inter);
-  font-optical-sizing: auto;
-  font-style: normal;
-}
-=======
 	outline: 2px solid var(--bauhaus-blue);
 	outline-offset: 2px;
 }
@@ -101,4 +48,3 @@ h6 {
 	font-optical-sizing: auto;
 	font-style: normal;
 }
->>>>>>> 5607bdce77c8ee151debddbe2fc1e716f54a3df7
